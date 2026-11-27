@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "mythoria_weapons:phoenix_blade",
+  "mythoria_weapons:frost_fang",
+  "mythoria_weapons:storm_blade",
+  "mythoria_weapons:void_reaver"
+ ]
+}

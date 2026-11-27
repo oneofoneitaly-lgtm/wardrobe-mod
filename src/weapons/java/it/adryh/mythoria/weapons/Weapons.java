@@ -3,7 +3,10 @@ package it.adryh.mythoria.weapons;
 import it.adryh.mythoria.core.market.MarketCatalog;
 import it.adryh.mythoria.core.market.MarketCategory;
 import it.adryh.mythoria.core.market.MarketEntry;
+import it.adryh.mythoria.weapons.client.WeaponsClient;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -34,6 +37,14 @@ public final class Weapons {
     public static final RegistryObject<Item> FROST = sword("frost_fang", FrostFang::new);
     public static final RegistryObject<Item> STORM = sword("storm_blade", StormBlade::new);
 
+    public static final RegistryObject<Item> VOID = sword("void_reaver", VoidReaver::new);
+    public static final RegistryObject<Item> BOW = ITEMS.register("elven_bow",
+            () -> new ElvenBow(new Item.Properties().durability(900).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> ARCANE = ITEMS.register("arcane_staff",
+            () -> new ArcaneStaff(new Item.Properties().durability(700).rarity(Rarity.EPIC).fireResistant()));
+    public static final RegistryObject<Item> LIFE = ITEMS.register("life_staff",
+            () -> new LifeStaff(new Item.Properties().durability(300).rarity(Rarity.EPIC)));
+
     private static RegistryObject<Item> sword(String name, BiFunction<Tier, Item.Properties, Item> factory) {
         return ITEMS.register(name, () -> factory.apply(MYTHIC, new Item.Properties().rarity(Rarity.EPIC)
                 .fireResistant().attributes(SwordItem.createAttributes(MYTHIC, 3, -2.4F))));
@@ -44,6 +55,13 @@ public final class Weapons {
         sell("phoenix_blade", 0, 500);
         sell("frost_fang", 1, 450);
         sell("storm_blade", 2, 650);
+        sell("void_reaver", 3, 600);
+        sell("elven_bow", 4, 480);
+        sell("arcane_staff", 5, 550);
+        sell("life_staff", 6, 420);
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            WeaponsClient.init(context);
+        }
     }
 
     private static void sell(String name, int order, int price) {

@@ -9,16 +9,23 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from design_items import *          # noqa: E402,F403
 from design_entities import *       # noqa: E402,F403
+from design_items2 import NEW_ITEMS, elven_bow   # noqa: E402
+from design_creatures2 import ember_drake, spirit_fox, shadow_lich   # noqa: E402
+import design_armor2 as armor2   # noqa: E402
+from lang2 import LANG2   # noqa: E402
+
+for group, entries in NEW_ITEMS.items():
+    ITEMS[group].update(entries)
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 
 MODS = {
     # source set: (mod id, name, description)
     'core': ('mythoria', 'Mythoria Market', 'Crowns, wallet and the fantasy market of the Mythoria modpack.'),
-    'creatures': ('mythoria_creatures', 'Mythoria Creatures', 'The rideable Golden Griffin and the Crystal Golem boss.'),
-    'weapons': ('mythoria_weapons', 'Mythoria Weapons', 'Three 3D fantasy swords with powers.'),
-    'armory': ('mythoria_armory', 'Mythoria Armory', 'Dragon Armor with a 3D worn model.'),
+    'creatures': ('mythoria_creatures', 'Mythoria Creatures', 'Griffin and Ember Drake mounts, the Spirit Fox and two bosses.'),
+    'weapons': ('mythoria_weapons', 'Mythoria Weapons', '3D fantasy swords, an elven bow and magic staves.'),
+    'armory': ('mythoria_armory', 'Mythoria Armory', 'Dragon, Elven and Frost armor with 3D worn models.'),
     'feast': ('mythoria_feast', 'Mythoria Feast', 'Magical 3D food and drinks.'),
 }
 
@@ -54,6 +61,25 @@ def items():
             item(source, name, builder)
     for name, pair in armour_icons().items():
         item('armory', name, lambda: pair)
+    for style in armor2.STYLES:
+        for slot, pair in armor2.icons(style).items():
+            item('armory', f'{style}_{slot}', lambda: pair)
+    bow()
+
+
+def bow():
+    """the three drawing stages of the bow, chosen by the base model"""
+    for stage in range(3):
+        item('weapons', f'elven_bow_pulling_{stage}', lambda: elven_bow(stage))
+    path = res('weapons') / 'assets' / 'mythoria_weapons' / 'models' / 'item' / 'elven_bow.json'
+    model = json.loads(path.read_text())
+    model['overrides'] = []
+    for stage, pull in ((0, None), (1, .65), (2, .9)):
+        predicate = {'pulling': 1}
+        if pull:
+            predicate['pull'] = pull
+        model['overrides'].append({'predicate': predicate, 'model': f'mythoria_weapons:item/elven_bow_pulling_{stage}'})
+    write(path, model)
 
 
 def java(source, package, cls, model):
@@ -62,19 +88,22 @@ def java(source, package, cls, model):
 
 
 def entities():
-    for name, cls, factory in (('golden_griffin', 'GriffinLayer', golden_griffin), ('crystal_golem', 'GolemLayer', crystal_golem)):
+    for name, cls, factory in (('golden_griffin', 'GriffinLayer', golden_griffin), ('crystal_golem', 'GolemLayer', crystal_golem),
+                               ('ember_drake', 'DrakeLayer', ember_drake), ('spirit_fox', 'FoxLayer', spirit_fox), ('shadow_lich', 'LichLayer', shadow_lich)):
         model = factory().build()
         folder = res('creatures') / 'assets' / 'mythoria_creatures' / 'textures' / 'entity'
         folder.mkdir(parents=True, exist_ok=True)
         model.tex.save(folder / (name + '.png'))
         model.glow.save(folder / (name + '_glow.png'))
         java('creatures', 'it.adryh.mythoria.creatures.client.gen', cls, model)
-    for slot, model in dragon_armour().items():
-        model.build()
-        folder = res('armory') / 'assets' / 'mythoria_armory' / 'textures' / 'armor'
-        folder.mkdir(parents=True, exist_ok=True)
-        model.tex.save(folder / f'dragon_{slot}.png')
-        java('armory', 'it.adryh.mythoria.armory.client.gen', slot.capitalize() + 'Layer', model)
+    sets = [('dragon', dragon_armour())] + [(style, armor2.worn(style)) for style in armor2.STYLES]
+    for style, pieces in sets:
+        for slot, model in pieces.items():
+            model.build()
+            folder = res('armory') / 'assets' / 'mythoria_armory' / 'textures' / 'armor'
+            folder.mkdir(parents=True, exist_ok=True)
+            model.tex.save(folder / f'{style}_{slot}.png')
+            java('armory', 'it.adryh.mythoria.armory.client.gen', style.capitalize() + slot.capitalize() + 'Layer', model)
 
 
 LANG = {
@@ -171,9 +200,24 @@ LANG = {
 }
 
 
+def tags():
+    """vanilla item tags, so that the weapons and the armor can be enchanted"""
+    w, a = 'mythoria_weapons', 'mythoria_armory'
+    swords = [f'{w}:{n}' for n in ('phoenix_blade', 'frost_fang', 'storm_blade', 'void_reaver')]
+    bows = [f'{w}:elven_bow']
+    staves = [f'{w}:arcane_staff', f'{w}:life_staff']
+    wanted = {('weapons', 'swords'): swords, ('weapons', 'enchantable/bow'): bows,
+              ('weapons', 'enchantable/durability'): bows + staves}
+    for tag, slot in (('head_armor', 'helmet'), ('chest_armor', 'chestplate'),
+                      ('leg_armor', 'leggings'), ('foot_armor', 'boots')):
+        wanted[('armory', tag)] = [f'{a}:{style}_{slot}' for style in ('dragon', 'elven', 'frost')]
+    for (source, tag), values in wanted.items():
+        write(res(source) / 'data' / 'minecraft' / 'tags' / 'item' / (tag + '.json'), {'replace': False, 'values': values})
+
+
 def metadata():
     for source, (mod, name, description) in MODS.items():
-        write(res(source) / 'assets' / mod / 'lang' / 'en_us.json', LANG[source])
+        write(res(source) / 'assets' / mod / 'lang' / 'en_us.json', {**LANG[source], **LANG2.get(source, {})})
         deps = [('forge', '[52,)'), ('minecraft', '[1.21.1,1.21.2)')]
         if source != 'core':
             deps.append(('mythoria', '[1.0,)'))
@@ -198,4 +242,5 @@ if __name__ == '__main__':
     items()
     entities()
     metadata()
+    tags()
     print('assets written')

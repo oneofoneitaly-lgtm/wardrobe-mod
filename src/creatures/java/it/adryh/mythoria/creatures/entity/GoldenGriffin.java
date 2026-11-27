@@ -61,6 +61,33 @@ public class GoldenGriffin extends TamableAnimal {
         super(type, level);
     }
 
+    /** Middle part of the translation keys of this mount. */
+    protected String voice() {
+        return "griffin";
+    }
+
+    /** How fast this mount flies compared to the griffin. */
+    protected float flightPower() {
+        return 1.0F;
+    }
+
+    protected double tamedHealth() {
+        return 70.0;
+    }
+
+    protected double wildHealth() {
+        return 40.0;
+    }
+
+    private Component say(String what, ChatFormatting colour) {
+        return Component.translatable("mythoria." + voice() + "." + what).withStyle(colour);
+    }
+
+    /** The hint shown when the rider gets on. */
+    protected Component rideHint() {
+        return say("ride", ChatFormatting.GOLD);
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 40.0)
@@ -106,7 +133,7 @@ public class GoldenGriffin extends TamableAnimal {
 
     @Override
     protected void applyTamingSideEffects() {
-        double health = isTame() ? 70.0 : 40.0;
+        double health = isTame() ? tamedHealth() : wildHealth();
         getAttribute(Attributes.MAX_HEALTH).setBaseValue(health);
         if (isTame()) {
             setHealth((float) health);
@@ -126,7 +153,7 @@ public class GoldenGriffin extends TamableAnimal {
                         navigation.stop();
                         setTarget(null);
                         level().broadcastEntityEvent(this, (byte) 7);
-                        player.displayClientMessage(Component.translatable("mythoria.griffin.tamed").withStyle(ChatFormatting.GOLD), true);
+                        player.displayClientMessage(say("tamed", ChatFormatting.GOLD), true);
                     } else {
                         level().broadcastEntityEvent(this, (byte) 6);
                     }
@@ -134,7 +161,7 @@ public class GoldenGriffin extends TamableAnimal {
                 return InteractionResult.sidedSuccess(client);
             }
             if (!client) {
-                player.displayClientMessage(Component.translatable("mythoria.griffin.wild").withStyle(ChatFormatting.YELLOW), true);
+                player.displayClientMessage(say("wild", ChatFormatting.YELLOW), true);
             }
             return InteractionResult.sidedSuccess(client);
         }
@@ -151,8 +178,7 @@ public class GoldenGriffin extends TamableAnimal {
                     setOrderedToSit(!isOrderedToSit());
                     navigation.stop();
                     setTarget(null);
-                    player.displayClientMessage(Component.translatable(isOrderedToSit() ? "mythoria.griffin.sit" : "mythoria.griffin.follow")
-                            .withStyle(ChatFormatting.GOLD), true);
+                    player.displayClientMessage(say(isOrderedToSit() ? "sit" : "follow", ChatFormatting.GOLD), true);
                 }
                 return InteractionResult.sidedSuccess(client);
             }
@@ -161,7 +187,7 @@ public class GoldenGriffin extends TamableAnimal {
                     setOrderedToSit(false);
                     setInSittingPose(false);
                     player.startRiding(this);
-                    player.displayClientMessage(Component.translatable("mythoria.griffin.ride").withStyle(ChatFormatting.GOLD), true);
+                    player.displayClientMessage(rideHint(), true);
                 }
                 return InteractionResult.sidedSuccess(client);
             }
@@ -224,7 +250,7 @@ public class GoldenGriffin extends TamableAnimal {
         if (isVehicle() && getControllingPassenger() instanceof Player player && !isInWater()) {
             boolean up = level().isClientSide() && jumpHeld.getAsBoolean();
             if (up || !onGround()) {
-                moveRelative(player.isSprinting() ? 0.085F : 0.055F, input);
+                moveRelative((player.isSprinting() ? 0.085F : 0.055F) * flightPower(), input);
                 Vec3 motion = getDeltaMovement();
                 double vertical = up ? 0.34 : -0.07;
                 float pitch = player.getXRot();   // positive: looking down

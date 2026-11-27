@@ -6,7 +6,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 jars = sorted((ROOT / "build/libs").glob("mythoria-*.jar"))
 if len(jars) != 5:
     sys.exit(f"expected 5 jars, found {[j.name for j in jars]}")

@@ -6,10 +6,10 @@ A fantasy content modpack for **Minecraft 1.21.1 (Forge)** by **@Adryh01**: crea
 | Mod | Content |
 |-----|---------|
 | `mythoria-core` | Crowns, wallet, market menu (key `M` or `/market`) |
-| `mythoria-creatures` | Golden Griffin (tame, ride, fly) and Crystal Golem (boss) |
-| `mythoria-weapons` | Phoenix Blade, Frost Fang, Storm Blade |
-| `mythoria-armory` | Dragon Armor |
-| `mythoria-feast` | Moon Apple, Fairy Cake, Dragon Drumstick, Elven Mead |
+| `mythoria-creatures` | Golden Griffin and Ember Drake (ride, fly), Spirit Fox (companion), Crystal Golem and Shadow Lich (bosses) |
+| `mythoria-weapons` | Phoenix Blade, Frost Fang, Storm Blade, Void Reaver, Elven Bow, Arcane Staff, Life Staff |
+| `mythoria-armory` | Dragon, Elven and Frost armor |
+| `mythoria-feast` | Moon Apple, Fairy Cake, Dragon Drumstick, Elven Mead, Star Fruit, Frost Sorbet, Honey Pie, Mana Potion |
 
 See [INSTALL.txt](INSTALL.txt) to install and play.
 

@@ -15,10 +15,19 @@ PLAY
 
 CREATURES
   Golden Griffin   wild in plains, meadows and savannas. Tame it with meat or buy the egg.
-                   Right click: ride. Space: climb. Look down + W: dive. Shift: dismount.
+  Ember Drake      wild (rare) in badlands, deserts and stony peaks. Tame with meat or buy the egg.
+                   While riding, R breathes fire (change the key in Options > Controls).
+  Mounts           Right click: ride. Space: climb. Look down + W: dive. Shift: dismount.
                    Shift + right click: wait / follow.
+  Spirit Fox       wild (rare) in taiga and snowy lands. Tame with sweet berries or a Fairy Cake,
+                   or buy the charm. It fetches drops and lets you see in the dark.
   Crystal Golem    boss. Rare in dark places, or summoned with the Golem Core.
+  Shadow Lich      boss. Summoned with the Lich Phylactery.
 
-SWORDS      Phoenix Blade, Frost Fang, Storm Blade  (right click uses their power)
-ARMOR       Dragon Armor (full set: fire immunity)
-FEAST       Moon Apple, Fairy Cake, Dragon Drumstick, Elven Mead
+WEAPONS     Phoenix Blade, Frost Fang, Storm Blade, Void Reaver  (right click uses their power)
+            Elven Bow (full draw: three arrows), Arcane Staff, Life Staff
+ARMOR       Dragon  - full set: fire immunity
+            Elven   - full set: speed and high jumps
+            Frost   - full set: no freezing, breathe under water
+FEAST       Moon Apple, Fairy Cake, Dragon Drumstick, Elven Mead,
+            Star Fruit, Frost Sorbet, Honey Pie, Mana Potion

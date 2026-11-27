@@ -14,5 +14,21 @@
  "market.mythoria_feast.dragon_drumstick": "Dragon Drumstick",
  "market.mythoria_feast.dragon_drumstick.desc": "A hearty meal: strength and fire resistance.",
  "market.mythoria_feast.elven_mead": "Elven Mead",
- "market.mythoria_feast.elven_mead.desc": "A sweet drink: speed and regeneration."
+ "market.mythoria_feast.elven_mead.desc": "A sweet drink: speed and regeneration.",
+ "item.mythoria_feast.star_fruit": "Star Fruit",
+ "item.mythoria_feast.star_fruit.tooltip": "Haste and Luck",
+ "market.mythoria_feast.star_fruit": "Star Fruit",
+ "market.mythoria_feast.star_fruit.desc": "Mine faster and find better loot.",
+ "item.mythoria_feast.frost_sorbet": "Frost Sorbet",
+ "item.mythoria_feast.frost_sorbet.tooltip": "Water Breathing and Dolphin's Grace",
+ "market.mythoria_feast.frost_sorbet": "Frost Sorbet",
+ "market.mythoria_feast.frost_sorbet.desc": "Swim and breathe like a fish.",
+ "item.mythoria_feast.honey_pie": "Honey Pie",
+ "item.mythoria_feast.honey_pie.tooltip": "Resistance and Health Boost",
+ "market.mythoria_feast.honey_pie": "Honey Pie",
+ "market.mythoria_feast.honey_pie.desc": "Tougher, with extra hearts.",
+ "item.mythoria_feast.mana_potion": "Mana Potion",
+ "item.mythoria_feast.mana_potion.tooltip": "Invisibility and Speed",
+ "market.mythoria_feast.mana_potion": "Mana Potion",
+ "market.mythoria_feast.mana_potion.desc": "Vanish and run."
 }

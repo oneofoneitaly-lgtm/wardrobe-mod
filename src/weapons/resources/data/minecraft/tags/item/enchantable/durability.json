@@ -1,0 +1,8 @@
+{
+ "replace": false,
+ "values": [
+  "mythoria_weapons:elven_bow",
+  "mythoria_weapons:arcane_staff",
+  "mythoria_weapons:life_staff"
+ ]
+}

@@ -4,11 +4,11 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="mythoria_weapons"
-version="1.0.0"
+version="1.1.0"
 displayName="Mythoria Weapons"
 authors="@Adryh01"
 logoFile="mythoria_weapons_logo.png"
-description="Three 3D fantasy swords with powers."
+description="3D fantasy swords, an elven bow and magic staves."
 
 [[dependencies.mythoria_weapons]]
 modId="forge"

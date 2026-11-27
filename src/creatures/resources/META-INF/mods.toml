@@ -4,11 +4,11 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="mythoria_creatures"
-version="1.0.0"
+version="1.1.0"
 displayName="Mythoria Creatures"
 authors="@Adryh01"
 logoFile="mythoria_creatures_logo.png"
-description="The rideable Golden Griffin and the Crystal Golem boss."
+description="Griffin and Ember Drake mounts, the Spirit Fox and two bosses."
 
 [[dependencies.mythoria_creatures]]
 modId="forge"

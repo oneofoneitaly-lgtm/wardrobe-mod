@@ -95,6 +95,7 @@ def food():
             text(im, (x0 + i * 400 + 200, y + 345), label, 27); text(im, (x0 + i * 400 + 200, y + 380), sub, 18, False, (214, 204, 240))
     im.convert('RGB').save(OUT + '/5_food_coins_eggs.png')
 
-import sys
-for fn in (sys.argv[1:] or ['creatures', 'weapons', 'armour', 'food']):
-    globals()[fn](); print('ok', fn, flush=True)
+if __name__ == '__main__':
+    import sys
+    for fn in (sys.argv[1:] or ['creatures', 'weapons', 'armour', 'food']):
+        globals()[fn](); print('ok', fn, flush=True)

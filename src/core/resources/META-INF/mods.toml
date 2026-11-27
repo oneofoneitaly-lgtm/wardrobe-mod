@@ -4,7 +4,7 @@ license="All Rights Reserved"
 
 [[mods]]
 modId="mythoria"
-version="1.0.0"
+version="1.1.0"
 displayName="Mythoria Market"
 authors="@Adryh01"
 logoFile="mythoria_logo.png"

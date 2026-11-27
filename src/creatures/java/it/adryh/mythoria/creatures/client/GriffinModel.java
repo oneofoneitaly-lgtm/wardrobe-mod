@@ -6,7 +6,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
 
 /** Animations: walking, sitting, folded wings on the ground and flapping in the air. */
-final class GriffinModel extends HierarchicalModel<GoldenGriffin> {
+final class GriffinModel<T extends GoldenGriffin> extends HierarchicalModel<T> {
     private static final float RAD = Mth.PI / 180.0F;
 
     private final ModelPart root;
@@ -52,7 +52,7 @@ final class GriffinModel extends HierarchicalModel<GoldenGriffin> {
     }
 
     @Override
-    public void setupAnim(GoldenGriffin entity, float swing, float amount, float age, float yaw, float pitch) {
+    public void setupAnim(T entity, float swing, float amount, float age, float yaw, float pitch) {
         root.getAllParts().forEach(ModelPart::resetPose);
         float partial = Mth.clamp(age - entity.tickCount, 0.0F, 1.0F);
         float fly = entity.flyAmount(partial);

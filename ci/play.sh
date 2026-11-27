@@ -22,6 +22,14 @@ rclick() { xdotool mousedown 3; sleep 0.25; xdotool mouseup 3; sleep 0.6; }
 key() { xdotool keydown "$1"; sleep 0.2; xdotool keyup "$1"; sleep 0.8; }
 cmd() { key t; xdotool type --delay 20 -- "$1"; sleep 0.4; key Return; }
 hold() { cmd "/item replace entity @s weapon.mainhand with $1"; }
+wheel() { xdotool mousemove 466 386; for _ in $(seq 1 "$1"); do xdotool click 5; sleep 0.4; done; }
+check() { cmd "/execute $1 run say $2"; }
+wearing() { # set
+  cmd "/item replace entity @s armor.head with mythoria_armory:$1_helmet"
+  cmd "/item replace entity @s armor.chest with mythoria_armory:$1_chestplate"
+  cmd "/item replace entity @s armor.legs with mythoria_armory:$1_leggings"
+  cmd "/item replace entity @s armor.feet with mythoria_armory:$1_boots"
+}
 finish() {
   cp "$log" "$out/latest.log" 2>/dev/null
   cp -r run/crash-reports "$out/" 2>/dev/null
@@ -64,14 +72,22 @@ sleep 12
 cmd "/execute at @s run summon marker ~ ~ ~ {Tags:[\"centre\"]}"
 
 # ---- market (GUI panel starts at 116,64; screen pixels are double)
-key m; shot 10-market-creatures 3
-click 466 326; shot 11-market-golem
+key m; shot 10-market-griffin 3
+click 466 326; shot 11-market-drake
+click 466 386; shot 11b-market-fox
+click 466 446; shot 11c-market-golem
+click 466 506; shot 11d-market-lich
 click 542 208; shot 12-market-weapons
-click 466 386; shot 13-market-storm
-click 738 208; shot 14-market-armor-set
-click 466 326; shot 14b-market-helmet
+click 466 446; shot 13-market-void
+click 466 506; shot 13b-market-bow
+wheel 2; click 466 446; shot 13c-market-arcane
+click 466 506; shot 13d-market-life
+click 738 208; shot 14-market-dragon-set
+click 466 326; shot 14b-market-elven-set
+click 466 386; shot 14c-market-frost-set
+click 466 446; shot 14d-market-helmet
 click 934 208; shot 15-market-feast
-click 466 386; shot 15b-market-drumstick
+wheel 3; click 466 506; shot 15b-market-mana
 click 862 542; shot 16-market-poor 1
 key Escape
 cmd "/crowns give @s 5000"
@@ -91,7 +107,12 @@ for i in mythoria_weapons:phoenix_blade mythoria_weapons:frost_fang mythoria_wea
   mythoria_creatures:griffin_egg mythoria_creatures:golem_core mythoria:crown \
   mythoria_armory:dragon_helmet mythoria_armory:dragon_chestplate mythoria_armory:dragon_leggings \
   mythoria_armory:dragon_boots mythoria_feast:moon_apple mythoria_feast:fairy_cake \
-  mythoria_feast:dragon_drumstick mythoria_feast:elven_mead; do cmd "/give @s $i"; done
+  mythoria_feast:dragon_drumstick mythoria_feast:elven_mead \
+  mythoria_weapons:void_reaver mythoria_weapons:elven_bow mythoria_weapons:arcane_staff mythoria_weapons:life_staff \
+  mythoria_creatures:drake_egg mythoria_creatures:spirit_charm mythoria_creatures:lich_phylactery \
+  mythoria_armory:elven_helmet mythoria_armory:elven_chestplate mythoria_armory:elven_leggings mythoria_armory:elven_boots \
+  mythoria_armory:frost_helmet mythoria_armory:frost_chestplate mythoria_armory:frost_leggings mythoria_armory:frost_boots \
+  mythoria_feast:star_fruit mythoria_feast:frost_sorbet mythoria_feast:honey_pie mythoria_feast:mana_potion; do cmd "/give @s $i"; done
 key 1
 key e; shot 20-all-icons 3
 xdotool mousemove 496 560; shot 21-tooltip
@@ -122,6 +143,61 @@ key F1; shot 34-sword-side 3; key F1
 cmd "/kill @e[type=armor_stand]"
 cmd "/kill @e[type=item]"
 
+# ---- new weapons
+cmd "/clear @s"
+cmd "/tp @s ~ ~ ~ 0 5"
+key 1
+hold "mythoria_weapons:void_reaver"
+check "if items entity @s weapon.mainhand #minecraft:swords" mythoria-swordtag-ok
+shot 35-void-first-person 3
+key F5; key F5; shot 35b-void-front 3; key F5
+cmd "/summon marker ~ ~ ~ {Tags:[\"start\"]}"
+cmd "/summon husk ~ ~ ~4 {NoAI:1b,PersistenceRequired:1b}"
+sleep 1; rclick; shot 35c-void-power 0.3
+sleep 1
+check "at @e[tag=start,limit=1] unless entity @s[distance=..4]" mythoria-blink-ok
+check "unless entity @e[type=husk,nbt={Health:20.0f}]" mythoria-blinkhit-ok
+cmd "/execute at @e[tag=start,limit=1] run tp @s ~ ~ ~ 0 5"
+cmd "/kill @e[type=husk]"
+cmd "/kill @e[tag=start]"
+sleep 2
+cmd "/kill @e[type=item]"
+
+hold "mythoria_weapons:elven_bow"
+check "if items entity @s weapon.mainhand #minecraft:enchantable/bow" mythoria-bowtag-ok
+cmd "/give @s arrow 16"
+cmd "/scoreboard objectives add shots dummy"
+shot 36-bow 3
+xdotool mousedown 3; shot 36b-bow-drawing 0.5; sleep 2; shot 36c-bow-drawn 0.1
+key F5; key F5; shot 36d-bow-drawn-front 1; xdotool mouseup 3
+sleep 0.5; key F5
+cmd "/execute store result score @s shots if entity @e[type=arrow]"
+check "if score @s shots matches 3.." mythoria-triple-ok
+cmd "/kill @e[type=arrow]"
+
+cmd "/clear @s"
+hold "mythoria_weapons:arcane_staff"
+shot 37-arcane 3
+cmd "/summon husk ~ ~ ~6 {NoAI:1b,PersistenceRequired:1b}"
+cmd "/tp @s ~ ~ ~ 0 7"
+sleep 1; rclick; shot 37b-arcane-bolt 0.2
+check "unless entity @e[type=husk,nbt={Health:20.0f}]" mythoria-bolt-ok
+key F5; key F5; sleep 1; shot 37c-arcane-front 1; key F5
+cmd "/kill @e[type=husk]"
+sleep 2
+cmd "/kill @e[type=item]"
+
+cmd "/clear @s"
+hold "mythoria_weapons:life_staff"
+cmd "/tp @s ~ ~ ~ 0 25"
+shot 38-life 3
+cmd "/damage @s 10"
+sleep 1; rclick; shot 38b-life-power 0.4
+check "if entity @s[nbt={active_effects:[{id:\"minecraft:regeneration\"}]}]" mythoria-heal-ok
+key F5; key F5; sleep 0.5; shot 38c-life-front 1; key F5
+cmd "/effect clear @s"
+cmd "/effect give @s instant_health 1 5"
+
 # ---- armour
 cmd "/clear @s"
 cmd "/item replace entity @s armor.head with mythoria_armory:dragon_helmet"
@@ -141,6 +217,38 @@ shot 42-armor-stands 4
 key F1
 cmd "/kill @e[type=armor_stand]"
 
+# ---- elven and frost armour
+n=0
+for set in elven frost; do
+  n=$((n + 2))
+  cmd "/clear @s"
+  cmd "/effect clear @s"
+  wearing $set
+  hold "mythoria_weapons:arcane_staff"
+  cmd "/tp @s ~ ~ ~ 0 5"
+  sleep 2
+  if [ $set = elven ]; then check "if entity @s[nbt={active_effects:[{id:\"minecraft:speed\"}]}]" mythoria-elvenset-ok
+  else check "if entity @s[nbt={active_effects:[{id:\"minecraft:water_breathing\"}]}]" mythoria-frostset-ok; fi
+  key F1
+  key F5; shot 4$n-armor-$set-back 3
+  key F5; shot 4$((n + 1))-armor-$set-front 3
+  key F5
+  key F1
+done
+cmd "/clear @s"
+cmd "/effect clear @s"
+x=-2.2
+for set in dragon elven frost; do
+  cmd "/summon armor_stand ~$x ~ ~3.2 {Rotation:[180f,0f],ArmorItems:[{id:\"mythoria_armory:${set}_boots\"},{id:\"mythoria_armory:${set}_leggings\"},{id:\"mythoria_armory:${set}_chestplate\"},{id:\"mythoria_armory:${set}_helmet\"}]}"
+  x=$(python3 -c "print($x + 2.2)")
+done
+cmd "/tp @s ~ ~ ~ 0 12"
+key F1; shot 46-three-sets 4; key F1
+cmd "/execute as @e[type=armor_stand] at @s run tp @s ~ ~ ~ 20 0"
+key F1; shot 47-three-sets-back 3; key F1
+cmd "/kill @e[type=armor_stand]"
+cmd "/kill @e[type=item]"
+
 # ---- food
 cmd "/clear @s"
 cmd "/tp @s ~ ~ ~ 0 5"
@@ -152,6 +260,17 @@ for food in moon_apple fairy_cake dragon_drumstick elven_mead; do
 done
 xdotool mousedown 3; shot 55-drinking 0.8; sleep 2.5; xdotool mouseup 3
 shot 56-effects 1
+cmd "/effect clear @s"
+cmd "/clear @s"
+n=0
+for food in star_fruit frost_sorbet honey_pie mana_potion; do
+  n=$((n + 1))
+  hold "mythoria_feast:$food"
+  shot 5$((6 + n))-$food 3
+done
+xdotool mousedown 3; sleep 3.2; xdotool mouseup 3
+sleep 1
+check "if entity @s[nbt={active_effects:[{id:\"minecraft:invisibility\"}]}]" mythoria-mana-ok
 cmd "/effect clear @s"
 cmd "/clear @s"
 
@@ -212,6 +331,101 @@ cmd "/effect clear @s"
 sleep 3
 cmd "/kill @e[type=item]"
 
+# ---- ember drake
+D="@e[type=mythoria_creatures:ember_drake]"
+cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 12"
+cmd "/clear @s"
+sleep 4
+key F1
+cmd "/summon mythoria_creatures:ember_drake ~ ~ ~6 {Rotation:[145f,0f],NoAI:1b,OnGround:1b}"
+shot 90-drake-quarter 5
+cmd "/kill $D"
+sleep 2
+cmd "/summon mythoria_creatures:ember_drake ~ ~ ~7 {Rotation:[90f,0f],NoAI:1b,OnGround:1b}"
+shot 91-drake-side 4
+cmd "/kill $D"
+sleep 2
+cmd "/summon mythoria_creatures:ember_drake ~ ~2.5 ~9 {NoAI:1b,NoGravity:1b,Rotation:[160f,0f]}"
+cmd "/tp @s ~ ~ ~ 0 -6"
+shot 92-drake-spread-wings 4
+cmd "/kill $D"
+sleep 2
+cmd "/kill @e[type=item]"
+key F1
+hold "mythoria_creatures:drake_egg"
+cmd "/tp @s ~ ~ ~ 0 42"
+sleep 1; rclick; sleep 1
+cmd "/tp @s ~ ~ ~ 0 18"
+shot 93-drake-hatched 2
+cmd "/clear @s"
+cmd "/execute as $D at @p rotated ~ 0 run tp @s ^ ^ ^3"
+cmd "/effect give $D slowness 5 255 true"
+cmd "/tp @s ~ ~ ~ 0 22"
+sleep 1; rclick; sleep 1
+cmd "/execute on vehicle run tag @p add mythoria_drake_rider"
+cmd "/execute unless entity @s[tag=mythoria_drake_rider] run ride @s mount @e[type=mythoria_creatures:ember_drake,limit=1,sort=nearest]"
+sleep 1
+check "on vehicle if entity @s[type=mythoria_creatures:ember_drake]" mythoria-drake-riding-ok
+cmd "/effect clear $D"
+xdotool mousemove_relative -- 0 -90; shot 94-drake-mounted 3
+cmd "/summon husk ~ 200 ~7 {NoAI:1b,PersistenceRequired:1b}"
+sleep 1
+key r; shot 95-drake-fire-first-person 0.1
+sleep 3
+check "unless entity @e[type=husk,nbt={Health:20.0f}]" mythoria-fire-ok
+cmd "/kill @e[type=husk]"
+key F5; sleep 2
+key r; shot 96-drake-fire-back 0.1
+sleep 3
+xdotool keydown space; sleep 3.5; xdotool keydown w; sleep 1.2; shot 97-drake-flying 0.1
+key r; shot 98-drake-flying-fire 0.1; xdotool keyup w; xdotool keyup space
+check "if entity @s[y=204,dy=200]" mythoria-drake-flight-ok
+xdotool keydown space; sleep 1.5; key F5; shot 99-drake-flying-front 0.1; xdotool keyup space
+key F5
+cmd "/gamemode creative"
+cmd "/ride @s dismount"
+cmd "/kill $D"
+cmd "/tp @s ~ 200 ~ 0 8"
+cmd "/gamemode survival"
+cmd "/effect clear @s"
+cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 25"
+sleep 4
+cmd "/kill @e[type=item]"
+
+# ---- spirit fox
+F="@e[type=mythoria_creatures:spirit_fox]"
+cmd "/clear @s"
+key F1
+cmd "/summon mythoria_creatures:spirit_fox ~ ~ ~2.8 {Rotation:[145f,0f],NoAI:1b,OnGround:1b}"
+shot A0-fox-quarter 5
+cmd "/kill $F"
+sleep 1.5
+cmd "/summon mythoria_creatures:spirit_fox ~ ~ ~2.8 {Rotation:[90f,0f],NoAI:1b,OnGround:1b}"
+shot A1-fox-side 4
+cmd "/kill $F"
+sleep 1.5
+cmd "/kill @e[type=item]"
+key F1
+hold "mythoria_creatures:spirit_charm"
+cmd "/tp @s ~ ~ ~ 0 45"
+sleep 1; rclick; sleep 1
+cmd "/tp @s ~ ~ ~ 0 30"
+shot A2-fox-hatched 1
+cmd "/clear @s"
+cmd "/time set midnight"
+sleep 3
+check "if entity @s[nbt={active_effects:[{id:\"minecraft:night_vision\"}]}]" mythoria-nightvision-ok
+shot A3-fox-night 2
+cmd "/summon item ~6 ~0.5 ~ {Item:{id:\"minecraft:diamond\",count:1},PickupDelay:0}"
+sleep 4
+check "if entity @s[nbt={Inventory:[{id:\"minecraft:diamond\"}]}]" mythoria-fetch-ok
+cmd "/time set 5500"
+cmd "/kill $F"
+cmd "/effect clear @s"
+cmd "/clear @s"
+sleep 2
+cmd "/kill @e[type=item]"
+
 # ---- golem
 cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 8"
 sleep 4
@@ -240,6 +454,39 @@ cmd "/damage $N 1000 minecraft:player_attack by @s"
 shot 76-golem-rewards 3
 cmd "/execute at @s run tp @e[type=item] @s"
 sleep 3
+
+# ---- shadow lich
+L="@e[type=mythoria_creatures:shadow_lich]"
+M="@e[type=mythoria_creatures:shadow_lich,limit=1,sort=nearest]"
+cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 0"
+cmd "/kill @e[type=item]"
+sleep 4
+key F1
+cmd "/summon mythoria_creatures:shadow_lich ~ ~ ~5.5 {NoAI:1b,Rotation:[180f,0f],PersistenceRequired:1b}"
+cmd "/tp @s ~ ~ ~ 0 -6"
+shot B0-lich-front 5
+cmd "/kill $L"
+sleep 3
+cmd "/kill @e[type=item]"
+cmd "/summon mythoria_creatures:shadow_lich ~ ~ ~6 {NoAI:1b,Rotation:[135f,0f],PersistenceRequired:1b}"
+shot B1-lich-quarter 4
+key F1
+cmd "/effect give @s resistance 600 4 true"
+cmd "/effect give @s regeneration 600 4 true"
+cmd "/data merge entity $M {NoAI:0b}"
+cmd "/tp @s ~ ~ ~ 0 0"
+shot B2-lich-attack 1.5
+shot B3-lich-fight 2
+shot B4-lich-fight-later 4
+check "if entity @e[type=skeleton]" mythoria-minions-ok
+cmd "/data merge entity $M {NoAI:1b}"
+cmd "/kill @e[type=skeleton]"
+cmd "/execute at $M run tp @s ~ 200 ~-6 0 25"
+cmd "/damage $M 1000 minecraft:player_attack by @s"
+shot B5-lich-rewards 3
+cmd "/execute at @s run tp @e[type=item] @s"
+cmd "/effect clear @s"
+sleep 3
 cmd "/summon zombie ~ ~ ~3 {NoAI:1b}"
 cmd "/damage @e[type=zombie,limit=1,sort=nearest] 100 minecraft:player_attack by @s"
 shot 77-zombie-coins 3
@@ -251,7 +498,9 @@ click 640 443; sleep 15; shot 80-back-to-title 4   # not essential
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi
-for check in mythoria-riding-ok mythoria-flight-ok mythoria-slowfall-ok; do
+for check in riding flight slowfall swordtag blink blinkhit bowtag triple bolt heal elvenset frostset mana \
+  drake-riding fire drake-flight nightvision fetch minions; do
+  check="mythoria-$check-ok"
   if grep -q "$check" "$log"; then step "passed $check"; else step "FAILED $check"; fi
 done
 finish "done" 0
