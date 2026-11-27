@@ -1,0 +1,572 @@
+[18:06:04] [main/INFO]: ModLauncher running: args [--username, Tester, --version, forge-1.21.1-52.1.20, --gameDir, /home/runner/work/wardrobe-mod/wardrobe-mod/run, --assetsDir, /home/runner/work/wardrobe-mod/wardrobe-mod/mc/assets, --assetIndex, 17, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --accessToken, **********, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720, --launchTarget, forge_client]
+[18:06:04] [main/INFO]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.13+9-LTS
+[18:06:04] [main/INFO]: ModLauncher 10.2.4 starting: java version 21.0.13 by Eclipse Adoptium; OS Linux arch amd64 version 7.0.0-1020-azure
+[18:06:04] [main/WARN]: Configuration file /home/runner/work/wardrobe-mod/wardrobe-mod/run/config/fml.toml is not correct. Correcting
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowHeight] was corrected from null to 480
+[18:06:04] [main/INFO]: Incorrect key [versionCheck] was corrected from null to true
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowFBScale] was corrected from null to 1
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowProvider] was corrected from null to fmlearlywindow
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowWidth] was corrected from null to 854
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowMaximized] was corrected from null to false
+[18:06:04] [main/INFO]: Incorrect key [defaultConfigPath] was corrected from null to defaultconfigs
+[18:06:04] [main/INFO]: Incorrect key [disableOptimizedDFU] was corrected from null to true
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowSkipGLVersions] was corrected from null to []
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowLogHelpMessage] was corrected from null to true
+[18:06:04] [main/INFO]: Incorrect key [maxThreads] was corrected from null to -1
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowSquir] was corrected from null to false
+[18:06:04] [main/INFO]: Incorrect key [earlyWindowShowCPU] was corrected from null to false
+[18:06:04] [main/INFO]: ImmediateWindowProvider not loading because splash screen is disabled
+[18:06:04] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar!/ Service=ModLauncher Env=CLIENT
+[18:06:04] [main/INFO]: Found mod file mythoria-armory-1.1.0.jar of type MOD with provider {mods folder locator at /home/runner/work/wardrobe-mod/wardrobe-mod/run/mods}
+[18:06:04] [main/INFO]: Found mod file mythoria-core-1.1.0.jar of type MOD with provider {mods folder locator at /home/runner/work/wardrobe-mod/wardrobe-mod/run/mods}
+[18:06:04] [main/INFO]: Found mod file mythoria-feast-1.1.0.jar of type MOD with provider {mods folder locator at /home/runner/work/wardrobe-mod/wardrobe-mod/run/mods}
+[18:06:04] [main/INFO]: Found mod file mythoria-weapons-1.1.0.jar of type MOD with provider {mods folder locator at /home/runner/work/wardrobe-mod/wardrobe-mod/run/mods}
+[18:06:04] [main/INFO]: Found mod file mythoria-creatures-1.1.0.jar of type MOD with provider {mods folder locator at /home/runner/work/wardrobe-mod/wardrobe-mod/run/mods}
+[18:06:04] [main/INFO]: Found mod file forge-1.21.1-52.1.20-client.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@3ef41c66
+[18:06:04] [main/INFO]: Found mod file lowcodelanguage-1.21.1-52.1.20.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@40620d8e
+[18:06:04] [main/INFO]: Found mod file forge-1.21.1-52.1.20-universal.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@40620d8e
+[18:06:04] [main/INFO]: Found mod file fmlcore-1.21.1-52.1.20.jar of type LIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@40620d8e
+[18:06:04] [main/INFO]: Found mod file mclanguage-1.21.1-52.1.20.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@40620d8e
+[18:06:04] [main/INFO]: Found mod file javafmllanguage-1.21.1-52.1.20.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@40620d8e
+[18:06:04] [main/INFO]: No dependencies to load found. Skipping!
+[18:06:05] [main/INFO]: Launching target 'forge_client' with arguments [--version, forge-1.21.1-52.1.20, --gameDir, /home/runner/work/wardrobe-mod/wardrobe-mod/run, --assetsDir, /home/runner/work/wardrobe-mod/wardrobe-mod/mc/assets, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --username, Tester, --assetIndex, 17, --accessToken, **********, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720]
+[18:06:06] [main/WARN]: Configuration conflict: there is more than one oshi.properties file on the classpath: [jar:file:///home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:///home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties, jar:file:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.properties]
+[18:06:06] [Datafixer Bootstrap/INFO]: 226 Datafixer optimizations took 273 milliseconds
+[18:06:06] [main/WARN]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath: [jar:file:///home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:///home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties, jar:file:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar!/oshi.architecture.properties]
+[18:06:10] [main/WARN]: Unrecognized user type: 
+[18:06:10] [Render thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[18:06:10] [Render thread/INFO]: Setting user: Tester
+[18:06:10] [Render thread/INFO]: Backend library: LWJGL version 3.3.3+5
+[18:06:12] [modloading-worker-0/INFO]: Forge mod loading, version 52.1.20, for MC 1.21.1 with MCP 20240808.132146
+[18:06:13] [modloading-worker-0/INFO]: MinecraftForge v52.1.20 Initialized
+[18:06:13] [modloading-worker-0/INFO]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[18:06:13] [Render thread/ERROR]: Error while loading the narrator
+com.mojang.text2speech.Narrator$InitializeException: Failed to load library flite
+	at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:69) ~[text2speech-1.17.9.jar:?]
+	at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar:?]
+	at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:19) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:595) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:212) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:85) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:69) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+Caused by: java.lang.UnsatisfiedLinkError: Unable to load library 'flite':
+libflite.so: cannot open shared object file: No such file or directory
+libflite.so: cannot open shared object file: No such file or directory
+Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forge/1.21.1-52.1.20/forge-1.21.1-52.1.20-universal.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forge/1.21.1-52.1.20/forge-1.21.1-52.1.20-client.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarFileSystems/0.3.26/JarJarFileSystems-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/securemodules/2.2.24/securemodules-2.2.24.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/unsafe/0.9.2/unsafe-0.9.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm/9.9.1/asm-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-tree/9.9.1/asm-tree-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-util/9.9.1/asm-util-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-commons/9.9.1/asm-commons-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-analysis/9.9.1/asm-analysis-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/de/oceanlabs/mcp/mcp_config/1.21.1-20240808.132146/mcp_config-1.21.1-20240808.132146-srg2off.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/bootstrap/2.1.8/bootstrap-2.1.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/bootstrap-api/2.1.8/bootstrap-api-2.1.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/accesstransformers/8.2.2/accesstransformers-8.2.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/eventbus/6.2.33/eventbus-6.2.33.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forgespi/7.1.5/forgespi-7.1.5.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/coremods/5.2.6/coremods-5.2.6.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/modlauncher/10.2.4/modlauncher-10.2.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/mergetool-api/1.0/mergetool-api-1.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/electronwill/night-config/toml/3.7.4/toml-3.7.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/electronwill/night-config/core/3.7.4/core-3.7.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/maven/maven-artifact/3.8.8/maven-artifact-3.8.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecrell/terminalconsoleappender/1.2.0/terminalconsoleappender-1.2.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-reader/3.25.1/jline-reader-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-terminal/3.25.1/jline-terminal-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-terminal-jna/3.25.1/jline-terminal-jna-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarSelector/0.3.26/JarJarSelector-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarMetadata/0.3.26/JarJarMetadata-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlcore/1.21.1-52.1.20/fmlcore-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlloader/1.21.1-52.1.20/fmlloader-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlearlydisplay/1.21.1-52.1.20/fmlearlydisplay-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/javafmllanguage/1.21.1-52.1.20/javafmllanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/lowcodelanguage/1.21.1-52.1.20/lowcodelanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/mclanguage/1.21.1-52.1.20/mclanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/versions/forge-1.21.1-52.1.20/forge-1.21.1-52.1.20.jar)
+	at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:325) ~[jna-5.14.0.jar:5.14.0 (b0)]
+	at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar:5.14.0 (b0)]
+	at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar:5.14.0 (b0)]
+	at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar:?]
+	... 20 more
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:213) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:19) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:595) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:212) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:85) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:69) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+		at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:226) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:19) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:595) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:212) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:85) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:69) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+		at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+	Suppressed: java.io.IOException: Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forge/1.21.1-52.1.20/forge-1.21.1-52.1.20-universal.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forge/1.21.1-52.1.20/forge-1.21.1-52.1.20-client.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarFileSystems/0.3.26/JarJarFileSystems-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/securemodules/2.2.24/securemodules-2.2.24.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/unsafe/0.9.2/unsafe-0.9.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm/9.9.1/asm-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-tree/9.9.1/asm-tree-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-util/9.9.1/asm-util-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-commons/9.9.1/asm-commons-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/ow2/asm/asm-analysis/9.9.1/asm-analysis-9.9.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/de/oceanlabs/mcp/mcp_config/1.21.1-20240808.132146/mcp_config-1.21.1-20240808.132146-srg2off.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/bootstrap/2.1.8/bootstrap-2.1.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/bootstrap-api/2.1.8/bootstrap-api-2.1.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/accesstransformers/8.2.2/accesstransformers-8.2.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/eventbus/6.2.33/eventbus-6.2.33.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/forgespi/7.1.5/forgespi-7.1.5.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/coremods/5.2.6/coremods-5.2.6.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/modlauncher/10.2.4/modlauncher-10.2.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/mergetool-api/1.0/mergetool-api-1.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/electronwill/night-config/toml/3.7.4/toml-3.7.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/electronwill/night-config/core/3.7.4/core-3.7.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/maven/maven-artifact/3.8.8/maven-artifact-3.8.8.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecrell/terminalconsoleappender/1.2.0/terminalconsoleappender-1.2.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-reader/3.25.1/jline-reader-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-terminal/3.25.1/jline-terminal-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jline/jline-terminal-jna/3.25.1/jline-terminal-jna-3.25.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/spongepowered/mixin/0.8.7/mixin-0.8.7.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarSelector/0.3.26/JarJarSelector-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/JarJarMetadata/0.3.26/JarJarMetadata-0.3.26.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlcore/1.21.1-52.1.20/fmlcore-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlloader/1.21.1-52.1.20/fmlloader-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/fmlearlydisplay/1.21.1-52.1.20/fmlearlydisplay-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/javafmllanguage/1.21.1-52.1.20/javafmllanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/lowcodelanguage/1.21.1-52.1.20/lowcodelanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/minecraftforge/mclanguage/1.21.1-52.1.20/mclanguage-1.21.1-52.1.20.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/wardrobe-mod/wardrobe-mod/mc/versions/forge-1.21.1-52.1.20/forge-1.21.1-52.1.20.jar)
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.extractFromResourcePath(Native.java:1141) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:297) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar:5.14.0 (b0)]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar:?]
+		at SECURE-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:19) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:595) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:212) ~[forge-1.21.1-52.1.20-client.jar:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:85) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:69) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+		at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+		at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+		at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+[18:06:13] [Render thread/INFO]: Reloading ResourceManager: vanilla, mod_resources
+[18:06:14] [modloading-worker-0/WARN]: Configuration file /home/runner/work/wardrobe-mod/wardrobe-mod/run/config/forge-client.toml is not correct. Correcting
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.alwaysSetupTerrainOffThread was corrected from null to its default, false. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.experimentalForgeLightPipelineEnabled was corrected from null to its default, false. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.showLoadWarnings was corrected from null to its default, true. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.useCombinedDepthStencilAttachment was corrected from null to its default, false. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.calculateAllNormals was corrected from null to its default, false. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.stabilizeDirectionGetNearest was corrected from null to its default, true. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key client.allowMipmapLowering was corrected from null to its default, false. 
+[18:06:14] [modloading-worker-0/WARN]: Configuration file /home/runner/work/wardrobe-mod/wardrobe-mod/run/config/forge-common.toml is not correct. Correcting
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key general was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key general.logLegacyTagWarnings was corrected from null to its default, OFF. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key general.fixGameTestBlockPosAsserts was corrected from null to its default, true. 
+[18:06:14] [modloading-worker-0/WARN]: Incorrect key general.channelListLimit was corrected from null to its default, 1024. 
+[18:06:14] [Worker-Main-2/INFO]: Found unifont_all_no_pua-15.1.05.hex, loading
+[18:06:14] [Worker-Main-2/INFO]: Found unifont_jp_patch-15.1.05.hex, loading
+[18:06:15] [Forge Version Check/INFO]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[18:06:15] [Forge Version Check/INFO]: [forge] Found status: UP_TO_DATE Current: 52.1.20 Target: null
+[18:06:16] [Render thread/WARN]: Missing sound for event: minecraft:item.goat_horn.play
+[18:06:16] [Render thread/WARN]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[18:06:16] [Render thread/ERROR]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.openDeviceOrFallback(Library.java:302) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.init(Library.java:154) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.loadLibrary(SoundEngine.java:107) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.reload(SoundEngine.java:99) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:128) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:42) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:13) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:69) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:162) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:136) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:121) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1141) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:795) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:228) ~[forge-1.21.1-52.1.20-client.jar:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:85) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+	at SECURE-BOOTSTRAP/net.minecraftforge.fmlloader@1.21.1-52.1.20/net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:69) ~[fmlloader-1.21.1-52.1.20.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:77) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:97) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:116) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:75) [modlauncher-10.2.4.jar!/:?]
+	at SECURE-BOOTSTRAP/cpw.mods.modlauncher@10.2.4/cpw.mods.modlauncher.BootstrapEntry.main(BootstrapEntry.java:17) [modlauncher-10.2.4.jar!/:?]
+	at net.minecraftforge.bootstrap@2.1.7/net.minecraftforge.bootstrap.Bootstrap.moduleMain(Bootstrap.java:188) [bootstrap-2.1.8.jar!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at net.minecraftforge.bootstrap.Bootstrap.bootstrapMain(Bootstrap.java:133) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.Bootstrap.start(Bootstrap.java:53) [bootstrap-2.1.8.jar:2.1.8]
+	at net.minecraftforge.bootstrap.ForgeBootstrap.main(ForgeBootstrap.java:19) [bootstrap-2.1.8.jar:2.1.8]
+[18:06:16] [Render thread/INFO]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[18:06:17] [Render thread/INFO]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[18:06:17] [Render thread/WARN]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[18:07:13] [Render thread/INFO]: Loaded 1290 recipes
+[18:07:13] [Render thread/INFO]: Loaded 1399 advancements
+[18:07:22] [Server thread/INFO]: Starting integrated minecraft server version 1.21.1
+[18:07:22] [Server thread/INFO]: Generating keypair
+[18:07:22] [Server thread/WARN]: Configuration file /home/runner/work/wardrobe-mod/wardrobe-mod/run/saves/New World/serverconfig/forge-server.toml is not correct. Correcting
+[18:07:22] [Server thread/WARN]: Incorrect key server was corrected from null to its default, SynchronizedConfig{DataHolder:{}}. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.permissionHandler was corrected from null to its default, forge:default_handler. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[18:07:22] [Server thread/WARN]: Incorrect key server.useItemWithDurationZero was corrected from null to its default, false. 
+[18:07:28] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[18:07:29] [Render thread/INFO]: Preparing spawn area: 2%
+[18:07:29] [Render thread/INFO]: Preparing spawn area: 2%
+[18:07:29] [Render thread/INFO]: Preparing spawn area: 2%
+[18:07:30] [Render thread/INFO]: Preparing spawn area: 2%
+[18:07:30] [Render thread/INFO]: Preparing spawn area: 2%
+[18:07:31] [Render thread/INFO]: Preparing spawn area: 18%
+[18:07:31] [Render thread/INFO]: Preparing spawn area: 18%
+[18:07:32] [Render thread/INFO]: Preparing spawn area: 18%
+[18:07:33] [Render thread/INFO]: Preparing spawn area: 22%
+[18:07:33] [Render thread/INFO]: Preparing spawn area: 51%
+[18:07:33] [Render thread/INFO]: Preparing spawn area: 51%
+[18:07:34] [Render thread/INFO]: Preparing spawn area: 51%
+[18:07:34] [Server thread/INFO]: Successfully initialized permission handler forge:default_handler
+[18:07:34] [Server thread/INFO]: Changing view distance to 6, from 10
+[18:07:34] [Server thread/INFO]: Changing simulation distance to 5, from 0
+[18:07:35] [Render thread/INFO]: Time elapsed: 6251 ms
+[18:07:35] [Render thread/INFO]: Connected to a modded server.
+[18:07:35] [Server thread/INFO]: Tester[local:E:472031c9] logged in with entity id 23 at (1.5, 73.0, -3.5)
+[18:07:35] [Server thread/INFO]: Tester joined the game
+[18:07:36] [Render thread/INFO]: [System] [CHAT] Welcome to Mythoria! Press M or type /market to open the Market. Earn Crowns by defeating monsters and mining.
+[18:07:36] [Render thread/INFO]: Loaded 2 advancements
+[18:08:20] [Server thread/INFO]: [Tester: Gamerule sendCommandFeedback is now set to: false]
+[18:08:23] [Server thread/INFO]: [Tester: Gamerule doDaylightCycle is now set to: false]
+[18:08:26] [Server thread/INFO]: [Tester: Gamerule doMobSpawning is now set to: false]
+[18:08:28] [Server thread/INFO]: [Tester: Set the weather to clear]
+[18:08:31] [Server thread/INFO]: [Tester: Set the time to 5500]
+[18:08:34] [Server thread/INFO]: [Tester: Successfully filled 2401 block(s)]
+[18:08:37] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:08:52] [Server thread/INFO]: [Tester: Summoned new Marker]
+[18:10:04] [Render thread/INFO]: [System] [CHAT] You received 5000 Crowns. Wallet: 5000
+[18:10:42] [Server thread/INFO]: [Tester: Removed 11 item(s) from player Tester]
+[18:10:45] [Server thread/INFO]: [Tester: Gave 1 [Phoenix Blade] to Tester]
+[18:10:48] [Server thread/INFO]: [Tester: Gave 1 [Frost Fang] to Tester]
+[18:10:51] [Server thread/INFO]: [Tester: Gave 1 [Storm Blade] to Tester]
+[18:10:54] [Server thread/INFO]: [Tester: Gave 1 [Griffin Egg] to Tester]
+[18:10:57] [Server thread/INFO]: [Tester: Gave 1 [Golem Core] to Tester]
+[18:11:00] [Server thread/INFO]: [Tester: Gave 1 [Crown] to Tester]
+[18:11:03] [Server thread/INFO]: [Tester: Gave 1 [Dragon Helmet] to Tester]
+[18:11:06] [Server thread/INFO]: [Tester: Gave 1 [Dragon Chestplate] to Tester]
+[18:11:09] [Server thread/INFO]: [Tester: Gave 1 [Dragon Leggings] to Tester]
+[18:11:12] [Server thread/INFO]: [Tester: Gave 1 [Dragon Boots] to Tester]
+[18:11:12] [Render thread/INFO]: Loaded 3 advancements
+[18:11:14] [Server thread/INFO]: [Tester: Gave 1 [Moon Apple] to Tester]
+[18:11:17] [Server thread/INFO]: [Tester: Gave 1 [Fairy Cake] to Tester]
+[18:11:20] [Server thread/INFO]: [Tester: Gave 1 [Dragon Drumstick] to Tester]
+[18:11:23] [Server thread/INFO]: [Tester: Gave 1 [Elven Mead] to Tester]
+[18:11:26] [Server thread/INFO]: [Tester: Gave 1 [Void Reaver] to Tester]
+[18:11:29] [Server thread/INFO]: [Tester: Gave 1 [Elven Longbow] to Tester]
+[18:11:32] [Server thread/INFO]: [Tester: Gave 1 [Arcane Staff] to Tester]
+[18:11:35] [Server thread/INFO]: [Tester: Gave 1 [Life Staff] to Tester]
+[18:11:38] [Server thread/INFO]: [Tester: Gave 1 [Drake Egg] to Tester]
+[18:11:41] [Server thread/INFO]: [Tester: Gave 1 [Spirit Charm] to Tester]
+[18:11:44] [Server thread/INFO]: [Tester: Gave 1 [Lich Phylactery] to Tester]
+[18:11:47] [Server thread/INFO]: [Tester: Gave 1 [Elven Helmet] to Tester]
+[18:11:50] [Server thread/INFO]: [Tester: Gave 1 [Elven Chestplate] to Tester]
+[18:11:53] [Server thread/INFO]: [Tester: Gave 1 [Elven Leggings] to Tester]
+[18:11:56] [Server thread/INFO]: [Tester: Gave 1 [Elven Boots] to Tester]
+[18:11:59] [Server thread/INFO]: [Tester: Gave 1 [Frost Helmet] to Tester]
+[18:12:02] [Server thread/INFO]: [Tester: Gave 1 [Frost Chestplate] to Tester]
+[18:12:05] [Server thread/INFO]: [Tester: Gave 1 [Frost Leggings] to Tester]
+[18:12:08] [Server thread/INFO]: [Tester: Gave 1 [Frost Boots] to Tester]
+[18:12:11] [Server thread/INFO]: [Tester: Gave 1 [Star Fruit] to Tester]
+[18:12:14] [Server thread/INFO]: [Tester: Gave 1 [Frost Sorbet] to Tester]
+[18:12:17] [Server thread/INFO]: [Tester: Gave 1 [Honey Pie] to Tester]
+[18:12:20] [Server thread/INFO]: [Tester: Gave 1 [Mana Potion] to Tester]
+[18:12:31] [Server thread/INFO]: [Tester: Removed 33 item(s) from player Tester]
+[18:12:35] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Phoenix Blade]]
+[18:12:38] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:12:50] [Server thread/INFO]: [Tester: Summoned new Zombie]
+[18:12:58] [Server thread/INFO]: Tester has made the advancement [Monster Hunter]
+[18:12:58] [Server thread/INFO]: [Tester: Killed Zombie]
+[18:12:58] [Render thread/INFO]: [System] [CHAT] Tester has made the advancement [Monster Hunter]
+[18:12:58] [Render thread/INFO]: Loaded 42 advancements
+[18:13:00] [Server thread/INFO]: [Tester: Killed Rotten Flesh]
+[18:13:04] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Fang]]
+[18:13:06] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:13:19] [Server thread/INFO]: [Tester: Summoned new Zombie]
+[18:13:26] [Server thread/INFO]: [Tester: Killed Zombie]
+[18:13:29] [Render thread/INFO]: [System] [CHAT] No entity was found
+[18:13:32] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Storm Blade]]
+[18:13:35] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:13:48] [Server thread/INFO]: [Tester: Summoned new Zombie]
+[18:13:55] [Server thread/INFO]: [Tester: Killed Zombie]
+[18:13:57] [Render thread/INFO]: [System] [CHAT] No entity was found
+[18:14:00] [Server thread/INFO]: [Tester: Removed 1 item(s) from player Tester]
+[18:14:04] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:14:07] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:14:15] [Server thread/INFO]: [Tester: Killed Armor Stand]
+[18:14:17] [Server thread/INFO]: [Tester: Killed Egg]
+[18:14:20] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:14:23] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:14:27] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Void Reaver]]
+[18:14:31] [Server thread/INFO]: [Not Secure] [Tester] mythoria-swordtag-ok
+[18:14:31] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-swordtag-ok
+[18:14:43] [Server thread/INFO]: [Tester: Summoned new Marker]
+[18:14:47] [Server thread/INFO]: [Tester: Summoned new Husk]
+[18:14:54] [Server thread/INFO]: [Not Secure] [Tester] mythoria-blink-ok
+[18:14:54] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-blink-ok
+[18:14:57] [Server thread/INFO]: [Not Secure] [Tester] mythoria-blinkhit-ok
+[18:14:57] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-blinkhit-ok
+[18:15:00] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:15:03] [Server thread/INFO]: [Tester: Killed Husk]
+[18:15:06] [Server thread/INFO]: [Tester: Killed Marker]
+[18:15:11] [Server thread/INFO]: [Tester: Killed 2 entities]
+[18:15:14] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Longbow]]
+[18:15:18] [Server thread/INFO]: [Not Secure] [Tester] mythoria-bowtag-ok
+[18:15:18] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-bowtag-ok
+[18:15:20] [Server thread/INFO]: [Tester: Gave 16 [Arrow] to Tester]
+[18:15:23] [Server thread/INFO]: [Tester: Created new objective [shots]]
+[18:15:41] [Server thread/INFO]: [Not Secure] [Tester] mythoria-triple-ok
+[18:15:41] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-triple-ok
+[18:15:44] [Server thread/INFO]: [Tester: Killed 3 entities]
+[18:15:46] [Server thread/INFO]: [Tester: Removed 16 item(s) from player Tester]
+[18:15:50] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Arcane Staff]]
+[18:15:56] [Server thread/INFO]: [Tester: Summoned new Husk]
+[18:15:59] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:16:05] [Server thread/INFO]: [Not Secure] [Tester] mythoria-bolt-ok
+[18:16:05] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-bolt-ok
+[18:16:13] [Server thread/INFO]: [Tester: Killed Husk]
+[18:16:17] [Server thread/INFO]: [Tester: Killed 6 entities]
+[18:16:20] [Server thread/INFO]: [Tester: Removed 1 item(s) from player Tester]
+[18:16:23] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Life Staff]]
+[18:16:26] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:16:32] [Server thread/INFO]: [Tester: Applied 10.0 damage to Tester]
+[18:16:38] [Server thread/INFO]: [Not Secure] [Tester] mythoria-heal-ok
+[18:16:38] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-heal-ok
+[18:16:45] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:16:48] [Server thread/INFO]: [Tester: Applied effect Instant Health to Tester]
+[18:16:51] [Server thread/INFO]: [Tester: Removed 1 item(s) from player Tester]
+[18:16:55] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Dragon Helmet]]
+[18:16:58] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Dragon Chestplate]]
+[18:17:02] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Dragon Leggings]]
+[18:17:05] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Dragon Boots]]
+[18:17:08] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Phoenix Blade]]
+[18:17:11] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:17:27] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:17:33] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:17:36] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:17:44] [Server thread/INFO]: [Tester: Killed 2 entities]
+[18:17:46] [Server thread/INFO]: [Tester: Removed 5 item(s) from player Tester]
+[18:17:49] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:17:52] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Helmet]]
+[18:17:56] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Chestplate]]
+[18:17:59] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Leggings]]
+[18:18:03] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Boots]]
+[18:18:06] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Arcane Staff]]
+[18:18:09] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:18:15] [Server thread/INFO]: [Not Secure] [Tester] mythoria-elvenset-ok
+[18:18:15] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-elvenset-ok
+[18:18:29] [Server thread/INFO]: [Tester: Removed 5 item(s) from player Tester]
+[18:18:31] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:18:35] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Helmet]]
+[18:18:38] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Chestplate]]
+[18:18:42] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Leggings]]
+[18:18:45] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Boots]]
+[18:18:48] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Arcane Staff]]
+[18:18:51] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:18:57] [Server thread/INFO]: [Not Secure] [Tester] mythoria-frostset-ok
+[18:18:57] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-frostset-ok
+[18:19:11] [Server thread/INFO]: [Tester: Removed 5 item(s) from player Tester]
+[18:19:14] [Server thread/INFO]: [Tester: Removed every effect from Tester]
+[18:19:19] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:19:25] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:19:30] [Server thread/INFO]: [Tester: Summoned new Armor Stand]
+[18:19:33] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:19:43] [Server thread/INFO]: [Armor Stand: Teleported Armor Stand to -0.700000, 200.000000, -0.300000]
+[18:19:43] [Server thread/INFO]: [Armor Stand: Teleported Armor Stand to 1.500000, 200.000000, -0.300000]
+[18:19:43] [Server thread/INFO]: [Armor Stand: Teleported Armor Stand to 3.700000, 200.000000, -0.300000]
+[18:19:51] [Server thread/INFO]: [Tester: Killed 3 entities]
+[18:19:53] [Server thread/INFO]: [Tester: Killed Egg]
+[18:19:56] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:19:59] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:20:02] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Moon Apple]]
+[18:20:09] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Fairy Cake]]
+[18:20:16] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Dragon Drumstick]]
+[18:20:22] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Elven Mead]]
+[18:20:28] [Render thread/INFO]: Loaded 62 advancements
+[18:20:33] [Server thread/INFO]: [Tester: Removed every effect from Tester]
+[18:20:35] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:20:39] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Star Fruit]]
+[18:20:45] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Frost Sorbet]]
+[18:20:52] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Honey Pie]]
+[18:20:59] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Mana Potion]]
+[18:21:10] [Server thread/INFO]: [Not Secure] [Tester] mythoria-mana-ok
+[18:21:10] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-mana-ok
+[18:21:12] [Server thread/INFO]: [Tester: Removed every effect from Tester]
+[18:21:15] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:21:18] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:21:22] [Server thread/INFO]: [Tester: Summoned new Golden Griffin]
+[18:21:26] [Server thread/INFO]: [Tester: Applied effect Slowness to Golden Griffin]
+[18:21:34] [Server thread/INFO]: [Tester: Killed Golden Griffin]
+[18:21:39] [Server thread/INFO]: [Tester: Summoned new Golden Griffin]
+[18:21:46] [Server thread/INFO]: [Tester: Killed Golden Griffin]
+[18:21:52] [Server thread/INFO]: [Tester: Summoned new Golden Griffin]
+[18:21:55] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:22:02] [Server thread/INFO]: [Tester: Killed Golden Griffin]
+[18:22:08] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Griffin Egg]]
+[18:22:11] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:22:13] [Server thread/INFO]: Tester has made the advancement [Best Friends Forever]
+[18:22:13] [Render thread/INFO]: [System] [CHAT] Tester has made the advancement [Best Friends Forever]
+[18:22:13] [Render thread/INFO]: Loaded 62 advancements
+[18:22:17] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.820000, -1.600000]
+[18:22:22] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:22:25] [Server thread/INFO]: [Golden Griffin: Teleported Golden Griffin to 1.500000, 200.000000, 0.220256]
+[18:22:29] [Server thread/INFO]: [Tester: Applied effect Slowness to Golden Griffin]
+[18:22:31] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -2.279744]
+[18:22:38] [Server thread/INFO]: [Not Secure] [Golden Griffin] mythoria-ride-click-ok
+[18:22:38] [Render thread/INFO]: [System] [CHAT] [Golden Griffin] mythoria-ride-click-ok
+[18:22:41] [Server thread/INFO]: [Golden Griffin: Added tag 'mythoria_rider' to Tester]
+[18:22:50] [Server thread/INFO]: [Not Secure] [Golden Griffin] mythoria-riding-ok
+[18:22:50] [Render thread/INFO]: [System] [CHAT] [Golden Griffin] mythoria-riding-ok
+[18:22:54] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:23:12] [Server thread/INFO]: [Not Secure] [Tester] mythoria-flight-ok
+[18:23:12] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-flight-ok
+[18:23:22] [Server thread/INFO]: [Not Secure] [Tester] mythoria-slowfall-ok
+[18:23:22] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-slowfall-ok
+[18:23:25] [Server thread/INFO]: [Tester: Set own game mode to Creative Mode]
+[18:23:28] [Server thread/INFO]: [Tester: Killed Golden Griffin]
+[18:23:28] [Render thread/INFO]: [System] [CHAT] Golden Griffin was killed
+[18:23:31] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, 14.142961]
+[18:23:33] [Server thread/INFO]: [Tester: Set own game mode to Survival Mode]
+[18:23:36] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:23:42] [Server thread/INFO]: [Tester: Killed 2 entities]
+[18:23:45] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:23:48] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:23:56] [Server thread/INFO]: [Tester: Summoned new Ember Drake]
+[18:24:04] [Server thread/INFO]: [Tester: Killed Ember Drake]
+[18:24:10] [Server thread/INFO]: [Tester: Summoned new Ember Drake]
+[18:24:17] [Server thread/INFO]: [Tester: Killed Ember Drake]
+[18:24:23] [Server thread/INFO]: [Tester: Summoned new Ember Drake]
+[18:24:26] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:24:33] [Server thread/INFO]: [Tester: Killed Ember Drake]
+[18:24:37] [Server thread/INFO]: [Tester: Killed 3 entities]
+[18:24:42] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Drake Egg]]
+[18:24:45] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:24:50] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 201.120000, -1.576365]
+[18:24:55] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:24:59] [Server thread/INFO]: [Ember Drake: Teleported Ember Drake to 1.500000, 200.000000, 0.772879]
+[18:25:02] [Server thread/INFO]: [Tester: Applied effect Slowness to Ember Drake]
+[18:25:05] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -2.227121]
+[18:25:11] [Server thread/INFO]: [Ember Drake: Added tag 'mythoria_drake_rider' to Tester]
+[18:25:21] [Server thread/INFO]: [Not Secure] [Ember Drake] mythoria-drake-riding-ok
+[18:25:21] [Render thread/INFO]: [System] [CHAT] [Ember Drake] mythoria-drake-riding-ok
+[18:25:24] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:25:30] [Server thread/INFO]: [Tester: Summoned new Husk]
+[18:25:39] [Server thread/INFO]: [Not Secure] [Tester] mythoria-fire-ok
+[18:25:39] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-fire-ok
+[18:25:42] [Server thread/INFO]: [Tester: Killed Husk]
+[18:25:59] [Server thread/INFO]: [Not Secure] [Tester] mythoria-drake-flight-ok
+[18:25:59] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-drake-flight-ok
+[18:26:05] [Server thread/INFO]: [Tester: Set own game mode to Creative Mode]
+[18:26:08] [Server thread/INFO]: [Tester: Tester stopped riding Ember Drake]
+[18:26:11] [Server thread/INFO]: [Tester: Killed Ember Drake]
+[18:26:11] [Render thread/INFO]: [System] [CHAT] Ember Drake was killed
+[18:26:14] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:26:22] [Server thread/INFO]: [Tester: Set own game mode to Survival Mode]
+[18:26:25] [Render thread/INFO]: [System] [CHAT] Target has no effects to remove
+[18:26:28] [Server thread/INFO]: [Tester: Killed Egg]
+[18:26:30] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:26:35] [Server thread/INFO]: [Tester: Summoned new Spirit Fox]
+[18:26:43] [Server thread/INFO]: [Tester: Killed Spirit Fox]
+[18:26:48] [Server thread/INFO]: [Tester: Summoned new Spirit Fox]
+[18:26:55] [Server thread/INFO]: [Tester: Killed Spirit Fox]
+[18:27:00] [Render thread/INFO]: [System] [CHAT] No entity was found
+[18:27:04] [Server thread/INFO]: [Tester: Replaced a slot on Tester with [Spirit Charm]]
+[18:27:07] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:27:12] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:27:16] [Render thread/INFO]: [System] [CHAT] No items were found on player Tester
+[18:27:19] [Server thread/INFO]: [Tester: Set the time to 18000]
+[18:27:26] [Server thread/INFO]: [Not Secure] [Tester] mythoria-nightvision-ok
+[18:27:26] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-nightvision-ok
+[18:27:32] [Server thread/INFO]: [Tester: Summoned new Diamond]
+[18:27:32] [Server thread/INFO]: Tester has made the advancement [Diamonds!]
+[18:27:32] [Render thread/INFO]: [System] [CHAT] Tester has made the advancement [Diamonds!]
+[18:27:33] [Render thread/INFO]: Loaded 81 advancements
+[18:27:39] [Server thread/INFO]: [Not Secure] [Tester] mythoria-fetch-ok
+[18:27:39] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-fetch-ok
+[18:27:42] [Server thread/INFO]: [Tester: Set the time to 5500]
+[18:27:45] [Server thread/INFO]: [Tester: Killed Spirit Fox]
+[18:27:45] [Render thread/INFO]: [System] [CHAT] Spirit Fox was killed
+[18:27:48] [Server thread/INFO]: [Tester: Removed every effect from Tester]
+[18:27:50] [Server thread/INFO]: [Tester: Removed 1 item(s) from player Tester]
+[18:27:55] [Server thread/INFO]: [Tester: Killed Egg]
+[18:27:58] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:28:07] [Server thread/INFO]: [Tester: Summoned new Crystal Golem]
+[18:28:10] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:28:21] [Server thread/INFO]: [Tester: Killed Crystal Golem]
+[18:28:27] [Server thread/INFO]: [Tester: Killed 4 entities]
+[18:28:31] [Server thread/INFO]: [Tester: Summoned new Crystal Golem]
+[18:28:39] [Server thread/INFO]: [Tester: Modified entity data of Crystal Golem]
+[18:28:42] [Server thread/INFO]: [Tester: Applied effect Resistance to Tester]
+[18:28:45] [Server thread/INFO]: [Tester: Applied effect Regeneration to Tester]
+[18:28:47] [Server thread/INFO]: [Tester: Teleported Tester to 0.510519, 200.000000, -11.597351]
+[18:28:58] [Server thread/INFO]: [Tester: Modified entity data of Crystal Golem]
+[18:29:02] [Server thread/INFO]: [Tester: Teleported Tester to -0.299679, 200.000000, -19.942441]
+[18:29:06] [Server thread/INFO]: [Tester: Applied 1000.0 damage to Crystal Golem]
+[18:29:12] [Server thread/INFO]: [Tester: Teleported 6 entities to Tester]
+[18:29:12] [Render thread/INFO]: Loaded 86 advancements
+[18:29:18] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:29:21] [Render thread/INFO]: [System] [CHAT] No entity was found
+[18:29:30] [Server thread/INFO]: [Tester: Summoned new Shadow Lich]
+[18:29:32] [Server thread/INFO]: [Tester: Teleported Tester to 1.500000, 200.000000, -3.500000]
+[18:29:41] [Server thread/INFO]: [Tester: Killed Shadow Lich]
+[18:29:46] [Server thread/INFO]: [Tester: Killed 5 entities]
+[18:29:50] [Server thread/INFO]: [Tester: Summoned new Shadow Lich]
+[18:29:58] [Server thread/INFO]: [Tester: Applied effect Resistance to Tester]
+[18:30:01] [Server thread/INFO]: [Tester: Applied effect Regeneration to Tester]
+[18:30:05] [Server thread/INFO]: [Tester: Modified entity data of Shadow Lich]
+[18:30:08] [Server thread/INFO]: [Tester: Teleported Tester to 1.982577, 200.221494, -4.126083]
+[18:30:19] [Server thread/INFO]: [Not Secure] [Tester] mythoria-minions-ok
+[18:30:19] [Render thread/INFO]: [System] [CHAT] [Tester] mythoria-minions-ok
+[18:30:23] [Server thread/INFO]: [Tester: Modified entity data of Shadow Lich]
+[18:30:26] [Server thread/INFO]: [Tester: Killed 2 entities]
+[18:30:29] [Server thread/INFO]: [Tester: Teleported Tester to 1.916622, 200.000000, -17.996952]
+[18:30:33] [Server thread/INFO]: [Tester: Applied 1000.0 damage to Shadow Lich]
+[18:30:39] [Server thread/INFO]: [Tester: Teleported 11 entities to Tester]
+[18:30:39] [Render thread/INFO]: Loaded 88 advancements
+[18:30:42] [Server thread/INFO]: [Tester: Removed every effect from Tester]
+[18:30:48] [Server thread/INFO]: [Tester: Summoned new Zombie]
+[18:30:51] [Server thread/INFO]: [Tester: Applied 100.0 damage to Zombie]
+[18:31:05] [Server thread/INFO]: Saving and pausing game...
+[18:31:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:31:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:31:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:31:07] [Server thread/INFO]: Tester lost connection: Disconnected
+[18:31:07] [Server thread/INFO]: Tester left the game
+[18:31:07] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[18:31:07] [Server thread/INFO]: Stopping server
+[18:31:07] [Server thread/INFO]: Saving players
+[18:31:07] [Server thread/INFO]: Saving worlds
+[18:31:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[18:31:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[18:31:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[18:31:08] [Server thread/INFO]: ThreadedAnvilChunkStorage (New World): All chunks are saved
+[18:31:08] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:31:08] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:31:08] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
