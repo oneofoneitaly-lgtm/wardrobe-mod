@@ -1,0 +1,65 @@
+// Wardrobe mod by @Adryh01
+// One build per Minecraft version:  gradle build -Pmc=1.21.1
+import groovy.json.JsonSlurper
+
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+}
+
+def versions = new JsonSlurper().parse(file('versions.json'))
+def mc = providers.gradleProperty('mc').getOrElse('1.21.1')
+def target = versions.find { it.mc == mc }
+if (target == null) throw new GradleException("Unsupported Minecraft version: ${mc}")
+
+version = project.mod_version
+group = 'it.adryh.wardrobe'
+base.archivesName = "wardrobe-forge-${mc}"
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+// shared code + the small version specific adapter
+sourceSets.main {
+    java.srcDirs = ['src/common/java'] + target.sources.collect { "src/${it}/java" }
+    resources.srcDirs = ['src/common/resources']
+}
+
+minecraft {
+    mappings channel: 'official', version: mc
+    runs {
+        configureEach { workingDir = layout.projectDirectory.dir('run') }
+        register('client')
+    }
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${mc}-${target.forge}")
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '300']
+}
+
+processResources {
+    def props = [version: project.version, mc: mc, loader: target.forge.tokenize('.')[0]]
+    inputs.properties props
+    filesMatching('META-INF/mods.toml') { expand props }
+}
+
+// used by CI to print the real Minecraft method signatures
+tasks.register('writeClasspath') {
+    def cp = sourceSets.main.compileClasspath
+    def out = layout.buildDirectory.file('classpath.txt')
+    doLast {
+        def f = out.get().asFile
+        f.parentFile.mkdirs()
+        f.text = cp.asPath
+    }
+}

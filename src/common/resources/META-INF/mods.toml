@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[${loader},)"
+license="All Rights Reserved - @Adryh01"
+clientSideOnly=true
+
+[[mods]]
+modId="wardrobe"
+version="${version}"
+displayName="Wardrobe"
+authors="@Adryh01"
+displayTest="IGNORE_ALL_VERSION"
+description='''Armadio con vestiti 3D. Comando /wardrobe o tasto J.'''
+
+[[dependencies.wardrobe]]
+    modId="forge"
+    mandatory=true
+    versionRange="[${loader},)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.wardrobe]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[${mc}]"
+    ordering="NONE"
+    side="CLIENT"
