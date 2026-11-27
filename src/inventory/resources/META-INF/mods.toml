@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved - @Adryh01"
+clientSideOnly=true
+
+[[mods]]
+modId="aurainventory"
+version="1.0.0"
+displayName="Aura Inventory"
+authors="@Adryh01"
+displayTest="IGNORE_ALL_VERSION"
+description="Inventari scuri, animazioni, rarita' e tooltip."
+
+[[dependencies.aurainventory]]
+    modId="forge"
+    mandatory=true
+    versionRange="[52,)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.aurainventory]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.1]"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.aurainventory]]
+    modId="auramenu"
+    mandatory=true
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="CLIENT"

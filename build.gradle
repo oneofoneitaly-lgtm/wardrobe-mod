@@ -1,0 +1,56 @@
+// Aura modpack by @Adryh01 - five Forge mods for Minecraft 1.21.1, built with:  gradle build
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+}
+
+version = project.mod_version
+group = 'it.adryh.aura'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+// the menu mod is the shared library, the others are compiled against it
+def addons = ['hud', 'sky', 'fx', 'inventory']
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/menu/java']
+        resources.srcDirs = ['src/menu/resources']
+    }
+    addons.each { name ->
+        create(name) {
+            compileClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+        }
+    }
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.21.1'
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency('net.minecraftforge:forge:1.21.1-52.1.20')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '300']
+}
+
+tasks.named('jar', Jar) {
+    archiveBaseName = 'aura-menu'
+}
+
+addons.each { name ->
+    def task = tasks.register("${name}Jar", Jar) {
+        archiveBaseName = "aura-${name}"
+        from sourceSets.named(name).map { it.output }
+    }
+    tasks.named('assemble') { dependsOn task }
+}

@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved - @Adryh01"
+clientSideOnly=true
+
+[[mods]]
+modId="aurafx"
+version="1.0.0"
+displayName="Aura FX"
+authors="@Adryh01"
+displayTest="IGNORE_ALL_VERSION"
+description="Mirino, contorno blocchi, zoom, particelle e vignetta."
+
+[[dependencies.aurafx]]
+    modId="forge"
+    mandatory=true
+    versionRange="[52,)"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.aurafx]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.21.1]"
+    ordering="NONE"
+    side="CLIENT"
+
+[[dependencies.aurafx]]
+    modId="auramenu"
+    mandatory=true
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="CLIENT"

@@ -1,0 +1,22 @@
+AURA - modpack per Minecraft 1.21.1 (Forge 52.1.20 o successivo)
+by @Adryh01
+
+Le 5 mod
+  aura-menu       schermata del titolo, menu in vetro e Aura Studio (serve alle altre)
+  aura-hud        barra di gioco moderna e riquadri spostabili
+  aura-sky        colori del cielo, aurora, stelle, nebbia, orario visivo
+  aura-fx         mirino, contorno blocchi, zoom, particelle, vignetta
+  aura-inventory  inventari scuri, animazioni, rarita', tooltip
+
+Installazione
+  CurseForge: Crea profilo > Importa > Aura-1.21.1-CurseForge.zip
+  Modrinth / Prism Launcher: importa Aura-1.21.1.mrpack
+  A mano: installa Forge 1.21.1, poi copia i file della cartella mods in .minecraft/mods
+
+Comandi
+  Shift destro oppure /aura   apre Aura Studio (anche dal menu principale e di pausa)
+  C (tieni premuto)           zoom, la rotellina cambia l'ingrandimento
+  TAB dentro Aura Studio      anteprima del gioco
+
+Le impostazioni sono salvate in config/aura/
+Font Inter (c) The Inter Project Authors, licenza SIL OFL 1.1 (inclusa in aura-menu).
