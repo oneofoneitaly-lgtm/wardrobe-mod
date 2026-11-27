@@ -3,6 +3,7 @@ name: Mythoria modpack (by @Adryh01)
 on:
   push:
     branches: [main]
+    paths-ignore: ["doodle-pals/**", "inventory-styles/**", ".github/**"]
   workflow_dispatch:
 
 permissions:

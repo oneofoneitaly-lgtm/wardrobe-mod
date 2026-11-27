@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="doodlepals"
+version="1.0.0"
+displayName="Doodle Pals"
+authors="@Adryh01"
+logoFile="doodlepals_logo.png"
+description="Draw a creature, bring it to life: its colours become its powers."
+
+[[dependencies.doodlepals]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.doodlepals]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"

@@ -1,0 +1,30 @@
+// Doodle Pals by @Adryh01 - draw a creature and bring it to life. Build with:  gradle build
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+}
+
+version = project.mod_version
+group = 'it.adryh.doodlepals'
+base.archivesName = 'doodle-pals-1.21.1'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+minecraft {
+    mappings channel: 'official', version: '1.21.1'
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+}
+
+dependencies {
+    implementation minecraft.dependency('net.minecraftforge:forge:1.21.1-52.1.20')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '300']
+}

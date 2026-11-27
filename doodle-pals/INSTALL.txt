@@ -1,0 +1,26 @@
+DOODLE PALS  -  Minecraft 1.21.1 (Forge)   by @Adryh01
+======================================================
+
+INSTALL
+  Install Forge 52.1.20 (or newer 52.x) and copy doodle-pals-1.21.1-*.jar into "mods".
+  On a server, the server needs the jar too.
+
+PLAY
+  Craft the Sketchbook: book + ink sac + feather (also in the creative menu).
+  Right click it, press J, or type /doodle to start drawing.
+  Bringing a drawing to life costs 1 Ink Sac (free in creative). Up to 3 pals at once.
+
+  Right click your pal ............ wait / follow
+  Shift + right click ............. store it as a Doodle Page (use the page to wake it again)
+  Right click with ink ............ heal it
+  /doodle call .................... bring your pals back to you
+  A pal that dies drops its page, so you never lose a drawing.
+
+COLOURS AND POWERS  (a colour counts when it covers at least 12% of the drawing; up to 3 powers)
+  Red Fire      hits burn, cannot burn        Orange Brave   hits harder
+  Yellow Spark  your speed                    Green Nature   grows crops
+  Cyan Frost    slows and freezes             Blue Tide      underwater breathing and swimming
+  Purple Magic  ranged magic bolts            Pink Heart     heals you when badly hurt
+  White Air     slow falling                  Black Shadow   sneak to vanish, weakens enemies
+  Brown Rock    your resistance, more health  Gray Iron      your mining speed, pal armour
+  More colour = stronger power. Bigger drawings are tougher but slower.
