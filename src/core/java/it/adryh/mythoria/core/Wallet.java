@@ -15,10 +15,10 @@ public final class Wallet {
 
     private static CompoundTag data(Player player) {
         CompoundTag root = player.getPersistentData();
-        if (!root.contains(Player.PERSISTED_NBT_TAG)) {
-            root.put(Player.PERSISTED_NBT_TAG, new CompoundTag());
+        if (!root.contains(ServerPlayer.PERSISTED_NBT_TAG)) {
+            root.put(ServerPlayer.PERSISTED_NBT_TAG, new CompoundTag());
         }
-        return root.getCompound(Player.PERSISTED_NBT_TAG);
+        return root.getCompound(ServerPlayer.PERSISTED_NBT_TAG);
     }
 
     public static long balance(Player player) {
