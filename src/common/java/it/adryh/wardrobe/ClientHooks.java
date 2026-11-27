@@ -30,5 +30,6 @@ public final class ClientHooks {
             if (openRequested || mc.screen == null) mc.setScreen(new WardrobeScreen());
         }
         openRequested = false;
+        DevHook.tick();
     }
 }

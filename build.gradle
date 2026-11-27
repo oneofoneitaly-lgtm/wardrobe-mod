@@ -17,9 +17,12 @@ group = 'it.adryh.wardrobe'
 base.archivesName = "wardrobe-forge-${mc}"
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+def autotest = providers.gradleProperty('autotest').isPresent()
+
 // shared code + the small version specific adapter
 sourceSets.main {
-    java.srcDirs = ['src/common/java'] + target.sources.collect { "src/${it}/java" }
+    java.srcDirs = ['src/common/java', autotest ? 'src/autotest/java' : 'src/release/java'] +
+            target.sources.collect { "src/${it}/java" }
     resources.srcDirs = ['src/common/resources']
 }
 
@@ -27,7 +30,9 @@ minecraft {
     mappings channel: 'official', version: mc
     runs {
         configureEach { workingDir = layout.projectDirectory.dir('run') }
-        register('client')
+        register('client') {
+            if (autotest) args '--width', '1280', '--height', '720'
+        }
     }
 }
 
