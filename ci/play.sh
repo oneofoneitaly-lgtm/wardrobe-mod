@@ -385,11 +385,10 @@ key F5
 cmd "/gamemode creative"
 cmd "/ride @s dismount"
 cmd "/kill $D"
-cmd "/tp @s ~ 200 ~ 0 8"
+cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 25"
+sleep 5                          # land while still in creative: no fall damage
 cmd "/gamemode survival"
 cmd "/effect clear @s"
-cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 25"
-sleep 4
 cmd "/kill @e[type=item]"
 
 # ---- spirit fox
