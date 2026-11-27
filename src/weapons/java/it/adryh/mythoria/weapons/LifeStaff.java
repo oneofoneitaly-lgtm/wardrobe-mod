@@ -29,7 +29,15 @@ public final class LifeStaff extends MagicStaff {
                 e -> e == player || e instanceof Player || e instanceof TamableAnimal pet && pet.isTame())) {
             friend.heal(8.0F);
             friend.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 120, 1));
-            level.sendParticles(ParticleTypes.HEART, friend.getX(), friend.getY(1.0) + 0.3, friend.getZ(), 5, 0.4, 0.2, 0.4, 0.0);
+            if (friend != player) {
+                level.sendParticles(ParticleTypes.HEART, friend.getX(), friend.getY(1.0) + 0.3, friend.getZ(), 5, 0.4, 0.2, 0.4, 0.0);
+            }
+        }
+        // the caster's own hearts circle at a distance: right in front of the eyes they fill the screen
+        for (int i = 0; i < 8; i++) {
+            double angle = i / 8.0 * Math.PI * 2.0;
+            level.sendParticles(ParticleTypes.HEART, player.getX() + Math.cos(angle) * 2.2, player.getY() + 0.4,
+                    player.getZ() + Math.sin(angle) * 2.2, 1, 0.0, 0.0, 0.0, 0.0);
         }
         BlockPos centre = player.blockPosition();
         for (BlockPos pos : BlockPos.betweenClosed(centre.offset(-5, -1, -5), centre.offset(5, 2, 5))) {
