@@ -165,12 +165,12 @@ cmd "/kill $G"
 sleep 1.5
 cmd "/summon mythoria_creatures:golden_griffin ~ ~ ~5 {Rotation:[90f,0f],NoAI:1b,OnGround:1b}"
 shot 61-griffin-side 4
-cmd "/tp $G ~ ~-300 ~"
+cmd "/kill $G"
 sleep 2
 cmd "/summon mythoria_creatures:golden_griffin ~ ~2.5 ~7 {NoAI:1b,NoGravity:1b,Rotation:[160f,0f]}"
 cmd "/tp @s ~ ~ ~ 0 -6"
 shot 62-griffin-spread-wings 4
-cmd "/tp $G ~ ~-300 ~"
+cmd "/kill $G"
 sleep 2
 key F1
 hold "mythoria_creatures:griffin_egg"
