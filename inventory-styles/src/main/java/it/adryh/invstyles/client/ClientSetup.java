@@ -32,6 +32,8 @@ public final class ClientSetup {
     private static final Logger LOG = LoggerFactory.getLogger("invstyles");
     private static final KeyMapping OPEN = new KeyMapping("key.invstyles.open", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_I, "key.categories.invstyles");
+    /** Screens already named in the log, once each. */
+    private static final java.util.Set<Class<?>> SEEN = new java.util.HashSet<>();
     /** textures were (re)loaded and need their styles again */
     private static boolean stale = true;
     private static boolean wantsMenu;
@@ -70,7 +72,9 @@ public final class ClientSetup {
         if (!(screen instanceof AbstractContainerScreen<?>)) {
             return;
         }
-        LOG.debug("[invstyles] opened {}", screen.getClass().getSimpleName());
+        if (SEEN.add(screen.getClass())) {
+            LOG.info("[invstyles] opened {}", screen.getClass().getSimpleName());
+        }
         event.addListener(Button.builder(Component.translatable("invstyles.button"), pressed -> openFrom(screen))
                 .bounds(4, 4, 44, 16).tooltip(Tooltip.create(Component.translatable("invstyles.title"))).build());
     }

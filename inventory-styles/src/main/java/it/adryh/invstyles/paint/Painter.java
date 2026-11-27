@@ -181,6 +181,8 @@ public final class Painter {
                         painted = style.window(x, y, accent);
                     } else if (c == SLOT_FILL || c == SLOT_DARK || c == WHITE) {
                         painted = style.slot(x - box[0], y - box[1], box[2], box[3], x, y, accent);
+                    } else if (well[i]) {
+                        painted = style.slot(5, 5, 18, 18, x, y, accent);
                     } else {
                         painted = style.mark(light(c), x, y, accent);
                     }

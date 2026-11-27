@@ -26,7 +26,7 @@ finish() {
   cp "$log" "$out/latest.log" 2>/dev/null
   cp -r run/crash-reports "$out/" 2>/dev/null
   cp run/config/invstyles.properties "$out/" 2>/dev/null
-  grep "\[invstyles\]" run/logs/debug.log > "$out/screens.txt" 2>/dev/null
+  grep "\[invstyles\]" "$log" > "$out/screens.txt" 2>/dev/null
   grep -iE "invstyles.*(exception|unable|missing|failed|error|could not)|(unable|missing|failed|error).*invstyles|mixin.*(error|fail)" "$log" > "$out/problems.txt" 2>/dev/null
   alive && kill $game
   pkill -f net.minecraftforge 2>/dev/null
@@ -195,6 +195,6 @@ for screen in Inventory Creative Container Crafting Furnace Anvil Enchantment Br
   Hopper Smoker Stonecutter Loom CartographyTable Smithing Grindstone Beacon Crafter Merchant HorseInventory; do
   suffix=Screen
   [ $screen = Creative ] && suffix=ModeInventoryScreen
-  passed "screen-$screen" "\[invstyles\] opened $screen$suffix" run/logs/debug.log
+  passed "screen-$screen" "\[invstyles\] opened $screen$suffix"
 done
 finish "done" 0
