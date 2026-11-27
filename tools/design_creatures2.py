@@ -159,7 +159,7 @@ def spirit_fox():
 
     def leg(n, s, z):
         x = s * 2
-        B = lambda a, b, m: Box((x + a[0], a[1], a[2]), (x + b[0], b[1], b[2]), m)
+        B = lambda a, b, m: Box((x + a[0], a[1], z + a[2]), (x + b[0], b[1], z + b[2]), m)
         return Part(n, (x, 6, z), [B((-1, 2, -1), (1, 7, 1), fur_m), B((-1, 0, -1.5), (1, 2, 1.5), sock)])
 
     def ear(n, s):

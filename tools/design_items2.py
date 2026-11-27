@@ -127,8 +127,8 @@ def elven_bow(stage=None):
     display = {
         'thirdperson_righthand': {'rotation': [-80, 260, -85], 'translation': [-1, -2, 2.5], 'scale': [.8, .8, .8]},
         'thirdperson_lefthand': {'rotation': [-80, -280, 85], 'translation': [-1, -2, 2.5], 'scale': [.8, .8, .8]},
-        'firstperson_righthand': {'rotation': [0, -90, -20], 'translation': [1.13, 3.2, 1.13], 'scale': [.6, .6, .6]},
-        'firstperson_lefthand': {'rotation': [0, 90, 20], 'translation': [1.13, 3.2, 1.13], 'scale': [.6, .6, .6]},
+        'firstperson_righthand': {'rotation': [0, -90, -20], 'translation': [1.13, 2.4, 1.13], 'scale': [.44, .44, .44]},
+        'firstperson_lefthand': {'rotation': [0, 90, 20], 'translation': [1.13, 2.4, 1.13], 'scale': [.44, .44, .44]},
         'gui': {'rotation': [0, 0, -45], 'translation': [0, 0, 0], 'scale': [.66, .66, .66]},
         'ground': {'rotation': [0, 0, 0], 'translation': [0, 3, 0], 'scale': [.45, .45, .45]},
         'fixed': {'rotation': [0, 180, -45], 'translation': [0, 0, 0], 'scale': [.66, .66, .66]},

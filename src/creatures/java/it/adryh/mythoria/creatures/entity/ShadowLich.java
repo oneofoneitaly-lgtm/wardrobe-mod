@@ -110,7 +110,7 @@ public class ShadowLich extends Monster {
         for (int i = 0; i <= steps; i++) {
             Vec3 at = from.lerp(to, i / (double) steps);
             server.sendParticles(ParticleTypes.SCULK_SOUL, at.x, at.y, at.z, 1, 0.05, 0.05, 0.05, 0.0);
-            server.sendParticles(ParticleTypes.SQUID_INK, at.x, at.y, at.z, 1, 0.05, 0.05, 0.05, 0.0);
+            server.sendParticles(ParticleTypes.WITCH, at.x, at.y, at.z, 1, 0.05, 0.05, 0.05, 0.0);
         }
         if (target.hurt(damageSources().indirectMagic(this, this), 8.0F)) {
             target.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 0), this);
@@ -148,6 +148,12 @@ public class ShadowLich extends Monster {
                 return;
             }
         }
+    }
+
+    /** Stray arrows of its own skeletons do not hurt it, so they never start fighting each other. */
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        return !(source.getEntity() instanceof AbstractSkeleton) && super.hurt(source, amount);
     }
 
     @Override

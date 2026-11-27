@@ -95,12 +95,12 @@ public class EmberDrake extends GoldenGriffin {
         Vec3 look = rider.getLookAngle();
         Vec3 flat = new Vec3(look.x, 0.0, look.z).normalize();
         Vec3 mouth = position().add(flat.scale(2.4)).add(0.0, 1.5, 0.0);
-        for (int i = 0; i < 14; i++) {
-            Vec3 spread = look.add((random.nextDouble() - 0.5) * 0.35, (random.nextDouble() - 0.5) * 0.35,
-                    (random.nextDouble() - 0.5) * 0.35);
+        for (int i = 0; i < 22; i++) {
+            Vec3 spread = look.add((random.nextDouble() - 0.5) * 0.3, (random.nextDouble() - 0.5) * 0.3,
+                    (random.nextDouble() - 0.5) * 0.3);
             // a count of zero turns the offsets into a velocity
-            server.sendParticles(i % 5 == 0 ? ParticleTypes.LAVA : ParticleTypes.FLAME, mouth.x, mouth.y, mouth.z, 0,
-                    spread.x, spread.y, spread.z, 0.65 + random.nextDouble() * 0.5);
+            server.sendParticles(i % 4 == 0 ? ParticleTypes.SMALL_FLAME : ParticleTypes.FLAME, mouth.x, mouth.y, mouth.z, 0,
+                    spread.x, spread.y, spread.z, 0.55 + random.nextDouble() * 0.55);
         }
         if (breathing % 4 == 0) {
             for (LivingEntity victim : server.getEntitiesOfClass(LivingEntity.class, getBoundingBox().inflate(FIRE_RANGE),

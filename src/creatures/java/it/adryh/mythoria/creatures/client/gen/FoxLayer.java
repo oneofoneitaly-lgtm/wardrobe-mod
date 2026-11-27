@@ -62,20 +62,20 @@ public final class FoxLayer {
                 .texOffs(34, 27).addBox(-0.5F, -0.5F, 2.8F, 1F, 1F, 2F, new CubeDeformation(0F)),
                 PartPose.offsetAndRotation(0F, 0F, 6.5F, -0.384F, 0F, 0F));
         PartDefinition p14 = root.addOrReplaceChild("right_front_leg", CubeListBuilder.create()
-                .texOffs(50, 13).addBox(-1F, -1F, 2F, 2F, 5F, 2F, new CubeDeformation(0F))
-                .texOffs(8, 23).addBox(-1F, 4F, 1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
+                .texOffs(50, 13).addBox(-1F, -1F, -1F, 2F, 5F, 2F, new CubeDeformation(0F))
+                .texOffs(8, 23).addBox(-1F, 4F, -1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
                 PartPose.offsetAndRotation(-2F, 18F, -3F, 0F, 0F, 0F));
         PartDefinition p15 = root.addOrReplaceChild("left_front_leg", CubeListBuilder.create()
-                .texOffs(106, 16).addBox(-1F, -1F, 2F, 2F, 5F, 2F, new CubeDeformation(0F))
-                .texOffs(18, 23).addBox(-1F, 4F, 1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
+                .texOffs(106, 16).addBox(-1F, -1F, -1F, 2F, 5F, 2F, new CubeDeformation(0F))
+                .texOffs(18, 23).addBox(-1F, 4F, -1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
                 PartPose.offsetAndRotation(2F, 18F, -3F, 0F, 0F, 0F));
         PartDefinition p16 = root.addOrReplaceChild("right_hind_leg", CubeListBuilder.create()
-                .texOffs(114, 16).addBox(-1F, -1F, -5F, 2F, 5F, 2F, new CubeDeformation(0F))
-                .texOffs(106, 23).addBox(-1F, 4F, -5.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
+                .texOffs(114, 16).addBox(-1F, -1F, -1F, 2F, 5F, 2F, new CubeDeformation(0F))
+                .texOffs(106, 23).addBox(-1F, 4F, -1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
                 PartPose.offsetAndRotation(-2F, 18F, 4F, 0F, 0F, 0F));
         PartDefinition p17 = root.addOrReplaceChild("left_hind_leg", CubeListBuilder.create()
-                .texOffs(0, 17).addBox(-1F, -1F, -5F, 2F, 5F, 2F, new CubeDeformation(0F))
-                .texOffs(116, 23).addBox(-1F, 4F, -5.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
+                .texOffs(0, 17).addBox(-1F, -1F, -1F, 2F, 5F, 2F, new CubeDeformation(0F))
+                .texOffs(116, 23).addBox(-1F, 4F, -1.5F, 2F, 2F, 3F, new CubeDeformation(0F)),
                 PartPose.offsetAndRotation(2F, 18F, 4F, 0F, 0F, 0F));
         return LayerDefinition.create(mesh, 128, 32);
     }

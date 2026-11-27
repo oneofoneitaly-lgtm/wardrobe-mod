@@ -1,6 +1,8 @@
 package it.adryh.mythoria.creatures.client;
 
+import it.adryh.mythoria.creatures.entity.EmberDrake;
 import it.adryh.mythoria.creatures.entity.GoldenGriffin;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.util.Mth;
@@ -71,6 +73,13 @@ final class GriffinModel<T extends GoldenGriffin> extends HierarchicalModel<T> {
             // lower the neck so the rider can see over the head
             neck.xRot += 0.72F;
             head.xRot -= 0.6F;
+            // the drake's horns are tall: seen from its own saddle the head drops further
+            Minecraft mc = Minecraft.getInstance();
+            if (entity instanceof EmberDrake && mc.player != null && entity.hasPassenger(mc.player)
+                    && mc.options.getCameraType().isFirstPerson()) {
+                neck.xRot += 0.22F;
+                neck.y += 5.0F;
+            }
         }
 
         tail.yRot += Mth.sin(age * 0.09F) * 0.25F;
