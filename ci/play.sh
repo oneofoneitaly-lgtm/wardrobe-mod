@@ -61,6 +61,7 @@ cmd "/time set 5500"
 cmd "/execute at @s run fill ~-24 199 ~-24 ~24 199 ~24 grass_block"
 cmd "/execute at @s run tp @s ~ 200 ~ 0 8"
 sleep 12
+cmd "/execute at @s run summon marker ~ ~ ~ {Tags:[\"centre\"]}"
 
 # ---- market (GUI panel starts at 116,64; screen pixels are double)
 key m; shot 10-market-creatures 3
@@ -212,6 +213,8 @@ sleep 3
 cmd "/kill @e[type=item]"
 
 # ---- golem
+cmd "/execute at @e[tag=centre,limit=1] run tp @s ~ ~ ~ 0 8"
+sleep 4
 B="@e[type=mythoria_creatures:crystal_golem]"
 N="@e[type=mythoria_creatures:crystal_golem,limit=1,sort=nearest]"
 key F1
