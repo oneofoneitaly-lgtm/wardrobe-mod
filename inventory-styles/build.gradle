@@ -1,0 +1,37 @@
+// Inventory Styles by @Adryh01 - new looks for every inventory. Build with:  gradle build
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[7.0.3,8)'
+}
+
+version = project.mod_version
+group = 'it.adryh.invstyles'
+base.archivesName = 'inventory-styles-1.21.1'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+minecraft {
+    mappings channel: 'official', version: '1.21.1'
+}
+
+repositories {
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
+    mavenCentral()
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+}
+
+dependencies {
+    implementation minecraft.dependency('net.minecraftforge:forge:1.21.1-52.1.20')
+    // Forge ships Mixin; the annotations are only needed to compile
+    compileOnly 'org.spongepowered:mixin:0.8.7'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xmaxerrs', '300']
+}
+
+tasks.named('jar', Jar) {
+    manifest { attributes 'MixinConfigs': 'invstyles.mixins.json' }
+}

@@ -1,0 +1,8 @@
+Inventory Styles - by @Adryh01
+Minecraft 1.21.1 with Forge 52
+
+1. Install Forge for Minecraft 1.21.1.
+2. Put inventory-styles-1.21.1-1.0.0.jar in your "mods" folder.
+3. Start the game, then press I (or click "Style" inside any inventory).
+
+Only you need it: it also works on servers without the mod.

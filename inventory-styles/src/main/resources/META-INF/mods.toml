@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+clientSideOnly=true
+
+[[mods]]
+modId="invstyles"
+version="1.0.0"
+displayName="Inventory Styles"
+authors="@Adryh01"
+logoFile="invstyles_logo.png"
+description="New looks for every inventory: Dark Glass, Fantasy, Neon and Pastel. Press I."
+
+[[dependencies.invstyles]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.invstyles]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="CLIENT"

@@ -1,0 +1,59 @@
+name: Inventory Styles (by @Adryh01)
+
+on:
+  push:
+    branches: [main]
+    paths: ["inventory-styles/**", ".github/workflows/inventory.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inventory
+  cancel-in-progress: true
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    defaults:
+      run:
+        working-directory: inventory-styles
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "9.5.0"
+      - name: Build
+        run: |
+          mkdir -p report
+          set -o pipefail
+          gradle build --no-daemon --stacktrace 2>&1 | tee report/build.log
+      - name: Package
+        run: |
+          mkdir -p jars dist && cp build/libs/inventory-styles-*.jar jars/ && cp build/libs/inventory-styles-*.jar dist/
+      - name: Virtual screen and launcher
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q xvfb xdotool imagemagick libgl1-mesa-dri
+          pip install --break-system-packages portablemc==4.4.1
+      - name: Play
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: xvfb-run -a -s "-screen 0 1280x720x24" bash ci/play.sh
+      - name: Save results on the ci-out-inventory branch
+        if: always()
+        run: |
+          mkdir -p out && cp -r report dist out/ 2>/dev/null || true
+          cd out
+          echo "${{ github.sha }}" > commit.txt
+          git init -q -b ci-out-inventory
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Build and test of ${{ github.sha }}"
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-out-inventory

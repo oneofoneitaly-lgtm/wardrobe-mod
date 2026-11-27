@@ -1,0 +1,22 @@
+{
+ "invstyles.title": "Inventory Styles",
+ "invstyles.button": "Style",
+ "invstyles.colour": "Colour",
+ "invstyles.style.vanilla": "Vanilla",
+ "invstyles.style.glass": "Dark Glass",
+ "invstyles.style.fantasy": "Fantasy",
+ "invstyles.style.neon": "Neon",
+ "invstyles.style.pastel": "Pastel",
+ "invstyles.group.all": "All inventories",
+ "invstyles.group.inventory": "Inventory",
+ "invstyles.group.creative": "Creative",
+ "invstyles.group.chests": "Chests",
+ "invstyles.group.crafting": "Crafting",
+ "invstyles.group.furnaces": "Furnaces",
+ "invstyles.group.magic": "Magic",
+ "invstyles.group.smithing": "Smithing",
+ "invstyles.group.trading": "Trading",
+ "invstyles.group.hotbar": "Hotbar",
+ "key.invstyles.open": "Open Inventory Styles",
+ "key.categories.invstyles": "Inventory Styles"
+}
