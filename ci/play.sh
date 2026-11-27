@@ -179,10 +179,19 @@ sleep 1; rclick; sleep 1
 cmd "/tp @s ~ ~ ~ 0 18"
 shot 63-griffin-hatched 2
 cmd "/clear @s"
-cmd "/tp @s ~ ~ ~ 0 25"
+# right click on a griffin that walks around is a matter of luck for a script: make it stand still first
+cmd "/execute as $G at @p rotated ~ 0 run tp @s ^ ^ ^2.5"
+cmd "/effect give $G slowness 5 255 true"
+cmd "/tp @s ~ ~ ~ 0 22"
 sleep 1; rclick; sleep 1
+cmd "/execute on vehicle if entity @s[type=mythoria_creatures:golden_griffin] run say mythoria-ride-click-ok"
+cmd "/execute on vehicle run tag @p add mythoria_rider"
+cmd "/execute unless entity @s[tag=mythoria_rider] run ride @s mount @e[type=mythoria_creatures:golden_griffin,limit=1,sort=nearest]"
+sleep 1
+cmd "/execute on vehicle if entity @s[type=mythoria_creatures:golden_griffin] run say mythoria-riding-ok"
+cmd "/effect clear $G"
 # no teleporting from here on (it would dismount): look around with the mouse
-xdotool mousemove_relative -- 0 -130; shot 64-griffin-mounted 2
+xdotool mousemove_relative -- 0 -110; shot 64-griffin-mounted 5
 key F5; shot 65-riding-back 3
 xdotool keydown space; sleep 3.5; shot 66-flying-up 0.1
 xdotool keydown w; sleep 1.2; shot 67-flying 0.1; xdotool keyup w; xdotool keyup space
@@ -239,7 +248,7 @@ click 640 443; sleep 15; shot 80-back-to-title 4   # not essential
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi
-for check in mythoria-flight-ok mythoria-slowfall-ok; do
+for check in mythoria-riding-ok mythoria-flight-ok mythoria-slowfall-ok; do
   if grep -q "$check" "$log"; then step "passed $check"; else step "FAILED $check"; fi
 done
 finish "done" 0
