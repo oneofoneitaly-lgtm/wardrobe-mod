@@ -37,7 +37,7 @@ public final class Feast {
         ITEMS.register(name, () -> {
             FoodProperties.Builder food = new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).alwaysEdible();
             for (Effect effect : effects) {
-                food.effect(() -> new MobEffectInstance(effect.type(), effect.ticks(), effect.level()), 1.0F);
+                food.effect(new MobEffectInstance(effect.type(), effect.ticks(), effect.level()), 1.0F);
             }
             Item.Properties properties = new Item.Properties().food(food.build()).rarity(Rarity.RARE);
             return new FeastItem(properties, name, drink);
