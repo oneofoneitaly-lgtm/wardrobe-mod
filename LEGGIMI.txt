@@ -6,7 +6,7 @@ Le 5 mod
   aura-hud        barra di gioco moderna e riquadri spostabili
   aura-sky        colori del cielo, aurora, stelle, nebbia, orario visivo
   aura-fx         mirino, contorno blocchi, zoom, particelle, vignetta
-  aura-inventory  inventari scuri, animazioni, rarita', tooltip
+  aura-inventory  inventari scuri, animazioni, rarità, tooltip
 
 Installazione
   CurseForge: Crea profilo > Importa > Aura-1.21.1-CurseForge.zip

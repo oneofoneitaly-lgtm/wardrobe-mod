@@ -53,6 +53,17 @@ final class SkyRenderer {
         return 1F - night(level) * 0.78F;
     }
 
+    /** The horizon colour, warmed up while the sun rises or sets. */
+    static int horizon(ClientLevel level) {
+        int base = Colors.lerp(0xFF000000, SkySettings.horizon(), daylight(level));
+        float[] sun = level.effects().getSunriseColor(level.getTimeOfDay(1F), 1F);
+        if (sun == null) {
+            return base;
+        }
+        int warm = 0xFF000000 | (Math.round(sun[0] * 255F) << 16) | (Math.round(sun[1] * 255F) << 8) | Math.round(sun[2] * 255F);
+        return Colors.lerp(base, warm, sun[3] * 0.9F);
+    }
+
     private static float night(ClientLevel level) {
         return Math.min(1F, level.getStarBrightness(1F) * 2F);
     }
@@ -77,7 +88,8 @@ final class SkyRenderer {
 
         if (SkySettings.SKY.on()) {
             RenderSystem.defaultBlendFunc();
-            dome(matrix, daylight(level), SkySettings.INTENSITY.f() / 100F * (0.35F + 0.65F * clear));
+            dome(matrix, scale(SkySettings.zenith(), daylight(level)), horizon(level),
+                    SkySettings.INTENSITY.f() / 100F * (0.35F + 0.65F * clear));
         }
         // light is added on top of the sky
         RenderSystem.blendFunc(770, 1);
@@ -115,9 +127,7 @@ final class SkyRenderer {
                 .setColor(color);
     }
 
-    private static void dome(Matrix4f m, float light, float intensity) {
-        int zenith = scale(SkySettings.zenith(), light);
-        int horizon = scale(SkySettings.horizon(), light);
+    private static void dome(Matrix4f m, int zenith, int horizon, float intensity) {
         // elevation in degrees, mix towards the zenith, opacity
         float[][] bands = {{-14, 0F, 0F}, {-3, 0F, 0.75F}, {6, 0.08F, 0.95F}, {20, 0.45F, 0.90F}, {45, 0.85F, 0.85F}, {90, 1F, 0.85F}};
         BufferBuilder b = begin();

@@ -5,6 +5,10 @@ import math
 import shutil
 from pathlib import Path
 
+from fontTools import subset
+from fontTools.pens.cu2quPen import Cu2QuPen
+from fontTools.pens.ttGlyphPen import TTGlyphPen
+from fontTools.ttLib import TTFont, newTable
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -150,16 +154,59 @@ def icons():
         Path(str(path) + ".mcmeta").write_text('{"texture": {"blur": true, "clamp": true}}')
 
 
+def convert_font(source, target):
+    """Minecraft only reads TrueType outlines: subset to Latin and convert the CFF curves."""
+    font = TTFont(source)
+    options = subset.Options()
+    options.layout_features = ["kern"]
+    options.name_IDs = ["*"]
+    options.notdef_outline = True
+    cutter = subset.Subsetter(options)
+    cutter.populate(unicodes=[*range(0x20, 0x250), *range(0x2010, 0x2060), 0x20AC, *range(0x2190, 0x2194), 0x2212])
+    cutter.subset(font)
+    order = font.getGlyphOrder()
+    outlines = font.getGlyphSet()
+    glyphs = {}
+    for name in order:
+        pen = TTGlyphPen(None)
+        outlines[name].draw(Cu2QuPen(pen, max_err=1.0, reverse_direction=True))
+        glyphs[name] = pen.glyph()
+    glyf = font["glyf"] = newTable("glyf")
+    glyf.glyphOrder, glyf.glyphs = order, glyphs
+    font["loca"] = newTable("loca")
+    for table in ("CFF ", "VORG"):
+        if table in font:
+            del font[table]
+    glyf.compile(font)
+    for name in order:
+        advance = font["hmtx"][name][0]
+        font["hmtx"][name] = (advance, getattr(glyphs[name], "xMin", 0))
+    maxp = font["maxp"]
+    maxp.tableVersion = 0x00010000
+    maxp.maxZones = 1
+    for field in ("maxTwilightPoints", "maxStorage", "maxFunctionDefs", "maxInstructionDefs", "maxStackElements",
+                  "maxSizeOfInstructions", "maxComponentElements", "maxComponentDepth", "maxPoints", "maxContours",
+                  "maxCompositePoints", "maxCompositeContours"):
+        setattr(maxp, field, 0)
+    maxp.recalc(font)
+    post = font["post"]
+    post.formatType = 2.0
+    post.extraNames, post.mapping = [], {}
+    font.sfntVersion = "\x00\x01\x00\x00"
+    font.save(target)
+
+
 def fonts():
     out = MENU / "assets/auramenu/font"
-    out.mkdir(parents=True, exist_ok=True)
+    shutil.rmtree(out, ignore_errors=True)
+    out.mkdir(parents=True)
     for src, name in (("Inter-Medium.otf", "inter"), ("Inter-Bold.otf", "inter_bold")):
-        shutil.copy(f"/usr/share/fonts/opentype/inter/{src}", out / f"{name}.otf")
+        convert_font(f"/usr/share/fonts/opentype/inter/{src}", out / f"{name}.ttf")
         (out / f"{name}.json").write_text(json.dumps({"providers": [
-            {"type": "ttf", "file": f"auramenu:{name}.otf", "size": 9.0, "oversample": 6.0, "shift": [0.0, 0.5]},
+            {"type": "ttf", "file": f"auramenu:{name}.ttf", "size": 9.0, "oversample": 6.0, "shift": [0.0, 0.5]},
             {"type": "reference", "id": "minecraft:default"}]}))
     text = Path("/usr/share/doc/fonts-inter/copyright").read_text()
-    (out / "OFL-Inter.txt").write_text("Font: Inter (https://github.com/rsms/inter)\n\n" + text)
+    (out / "ofl-inter.txt").write_text("Font: Inter (https://github.com/rsms/inter), converted to TrueType.\n\n" + text)
 
 
 def main():
@@ -174,7 +221,7 @@ def main():
                             ("hud", "Aura HUD", "Barra moderna e riquadri informativi spostabili."),
                             ("sky", "Aura Sky", "Cielo, aurora, stelle, nebbia e orario visivo."),
                             ("fx", "Aura FX", "Mirino, contorno blocchi, zoom, particelle e vignetta."),
-                            ("inventory", "Aura Inventory", "Inventari scuri, animazioni, rarita' e tooltip.")):
+                            ("inventory", "Aura Inventory", "Inventari scuri, animazioni, rarità e tooltip.")):
         res = ROOT / "src" / mod / "resources"
         (res / "META-INF").mkdir(parents=True, exist_ok=True)
         modid = "aura" + mod

@@ -45,6 +45,8 @@ win=$(xdotool search --name Minecraft | tail -1)
 xdotool mousemove 40 650
 shot 01-title 8
 xdotool mousemove 640 310; shot 02-title-hover
+click 527 526; shot 02b-options
+key Escape
 click 640 472                       # Aura Studio
 shot 03-studio-menu
 click 302 248; shot 04-studio-hud
@@ -52,10 +54,12 @@ click 302 316; shot 05-studio-sky
 click 302 384; shot 06-studio-fx
 click 302 452; shot 07-studio-inventory
 click 302 180
+click 1060 214; click 1060 214; shot 07b-studio-theme-green
+click 1024 616; shot 07c-title-green
+click 640 472; click 836 214; click 836 214
 xdotool mousemove 700 400; for _ in 1 2 3 4 5 6 7 8; do xdotool click 5; sleep 0.2; done; shot 08-studio-menu-bottom
 click 1024 616                      # Fatto
-click 527 526; shot 09-options
-key Escape
+shot 09-title
 click 640 310; shot 10-create-world 6
 click 640 322                       # Allow commands
 shot 11-create-world-commands
@@ -91,6 +95,11 @@ cmd "/tp @s ~ ~ ~ 0 55"; sleep 4; shot 17-block-outline
 xdotool keydown c; sleep 2; shot 18-zoom 1; xdotool keyup c
 cmd "/tp @s ~ ~ ~ 0 5"
 key F5; shot 19-third-person 4; key F5; key F5
+cmd "/summon pig ~ ~ ~2 {NoAI:1b}"
+cmd "/tp @s ~ ~ ~ 0 30"
+sleep 2; xdotool click 1; shot 19b-hit-particles 0.4
+cmd "/kill @e[type=pig]"
+cmd "/tp @s ~ ~ ~ 0 5"
 key e; shot 20-inventory 3
 xdotool mousemove 496 494; shot 21-inventory-tooltip
 key Escape
@@ -105,14 +114,16 @@ cmd "/gamemode survival"
 key Shift_R; shot 24-studio-ingame 3
 click 302 248; shot 25-studio-hud-ingame
 click 1030 406; shot 26-hud-editor
-xdotool mousemove 120 60; xdotool mousedown 1; sleep 0.3; xdotool mousemove 300 200; sleep 0.3; xdotool mousemove 420 230; sleep 0.3; xdotool mouseup 1
+xdotool mousemove 80 100; xdotool mousedown 1; sleep 0.3; xdotool mousemove 200 180; sleep 0.3; xdotool mousemove 330 230; sleep 0.3; xdotool mouseup 1
 shot 27-hud-editor-moved
 key Escape
+click 302 384; click 1042 314; shot 27b-color-picker
+click 1042 314
 click 302 316; shot 28-studio-sky-ingame
 xdotool keydown Tab; shot 29-preview 1; xdotool keyup Tab
 key Escape
 key Escape; shot 30-pause 3
-click 527 34 ; true
+click 640 443; sleep 15; xdotool mousemove 40 650; shot 31-back-to-title 6
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi

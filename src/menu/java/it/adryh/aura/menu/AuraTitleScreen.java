@@ -66,7 +66,7 @@ public final class AuraTitleScreen extends Screen {
 
         button(width - 168, 8, 70, 18, Component.literal("Lingua"), () -> minecraft.setScreen(
                 new LanguageSelectScreen(this, minecraft.options, minecraft.getLanguageManager())));
-        button(width - 94, 8, 86, 18, Component.literal("Accessibilita'"), () -> minecraft.setScreen(
+        button(width - 94, 8, 86, 18, Component.literal("Accessibilità"), () -> minecraft.setScreen(
                 new AccessibilityOptionsScreen(this, minecraft.options)));
     }
 

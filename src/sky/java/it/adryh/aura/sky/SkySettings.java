@@ -35,7 +35,7 @@ final class SkySettings {
         m.header("Colori del cielo");
         SKY = m.toggle("sky", "Cielo Aura", true);
         PRESET = m.choice("preset", "Stile", 0, PRESETS);
-        INTENSITY = m.slider("intensity", "Intensita'", 55, 0, 100, 5, "%");
+        INTENSITY = m.slider("intensity", "Intensità", 55, 0, 100, 5, "%");
         ZENITH = m.add(new Setting.Color("zenith", "Colore in alto", 0x312E81, false))
                 .onlyIf(() -> PRESET.index() == PRESETS.length - 1);
         HORIZON = m.add(new Setting.Color("horizon", "Colore all'orizzonte", 0xF472B6, false))
@@ -45,7 +45,7 @@ final class SkySettings {
         AURORA = m.toggle("aurora", "Aurora boreale", true);
         AURORA_LOW = m.color("auroraLow", "Colore aurora in basso", 0x34D399);
         AURORA_HIGH = m.color("auroraHigh", "Colore aurora in alto", 0x8B5CF6);
-        AURORA_POWER = m.slider("auroraPower", "Luminosita' aurora", 70, 10, 100, 5, "%");
+        AURORA_POWER = m.slider("auroraPower", "Luminosità aurora", 70, 10, 100, 5, "%");
         STARS = m.toggle("stars", "Stelle scintillanti", true);
         STAR_COUNT = m.slider("starCount", "Numero di stelle", 600, 100, 1500, 50, "");
         SHOOTING = m.toggle("shooting", "Stelle cadenti", true);

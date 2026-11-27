@@ -39,6 +39,15 @@ final class MenuHooks {
         }
     }
 
+    /**
+     * The first title screen opens before Forge starts delivering events, so it is also checked every tick.
+     */
+    static void replaceTitle(Minecraft mc) {
+        if (mc.screen != null && mc.screen.getClass() == TitleScreen.class && Theme.TITLE.on()) {
+            mc.setScreen(new AuraTitleScreen());
+        }
+    }
+
     private static void init(ScreenEvent.Init.Post event) {
         Screen screen = event.getScreen();
         boolean pause = screen instanceof PauseScreen;

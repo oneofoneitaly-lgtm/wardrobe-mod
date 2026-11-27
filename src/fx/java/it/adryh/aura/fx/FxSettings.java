@@ -62,7 +62,7 @@ final class FxSettings {
         m.header("Particelle");
         HIT = m.toggle("hit", "Particelle quando colpisci", true);
         HIT_STYLE = m.choice("hitStyle", "Tipo", 0, PARTICLES);
-        HIT_AMOUNT = m.slider("hitAmount", "Quantita'", 14, 4, 40, 2, "");
+        HIT_AMOUNT = m.slider("hitAmount", "Quantità", 14, 4, 40, 2, "");
         TRAIL = m.toggle("trail", "Scia mentre cammini", false);
         TRAIL_STYLE = m.<Setting.Choice>choice("trailStyle", "Tipo di scia", 5, PARTICLES).onlyIf(() -> TRAIL.on());
         m.header("Vignetta");

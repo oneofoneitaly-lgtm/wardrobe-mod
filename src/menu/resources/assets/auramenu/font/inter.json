@@ -1,1 +1,1 @@
-{"providers": [{"type": "ttf", "file": "auramenu:inter.otf", "size": 9.0, "oversample": 6.0, "shift": [0.0, 0.5]}, {"type": "reference", "id": "minecraft:default"}]}
+{"providers": [{"type": "ttf", "file": "auramenu:inter.ttf", "size": 9.0, "oversample": 6.0, "shift": [0.0, 0.5]}, {"type": "reference", "id": "minecraft:default"}]}

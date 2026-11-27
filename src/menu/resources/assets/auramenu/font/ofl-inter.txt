@@ -1,4 +1,4 @@
-Font: Inter (https://github.com/rsms/inter)
+Font: Inter (https://github.com/rsms/inter), converted to TrueType.
 
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: fonts-inter

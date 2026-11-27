@@ -1,8 +1,10 @@
 package it.adryh.aura.hud;
 
 import it.adryh.aura.core.Aura;
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.event.AddGuiOverlayLayersEvent;
+import net.minecraftforge.client.event.CustomizeGuiOverlayEvent;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.gui.overlay.ForgeLayeredDraw;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,6 +22,12 @@ public final class AuraHudMod {
         MinecraftForge.EVENT_BUS.addListener((InputEvent.MouseButton.Pre e) -> {
             if (e.getAction() == GLFW.GLFW_PRESS) {
                 Widgets.click(e.getButton());
+            }
+        });
+        MinecraftForge.EVENT_BUS.addListener((CustomizeGuiOverlayEvent.Chat e) -> {
+            Minecraft mc = Minecraft.getInstance();
+            if (Hotbar.active() && mc.gameMode.canHurtPlayer()) {
+                e.setPosY(e.getPosY() - 22);
             }
         });
     }

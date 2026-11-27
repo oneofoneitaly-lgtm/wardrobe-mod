@@ -39,6 +39,7 @@ public final class AuraMenuMod {
         while (OPEN.consumeClick()) {
             pressed = true;
         }
+        MenuHooks.replaceTitle(mc);
         if ((pressed || openRequested) && mc.screen == null) {
             openRequested = false;
             mc.setScreen(new HubScreen(null));

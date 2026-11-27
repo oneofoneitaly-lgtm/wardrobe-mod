@@ -35,7 +35,7 @@ final class HudSettings {
             mc.setScreen(new HudEditorScreen(mc.screen));
         });
         SCALE = m.slider("scale", "Dimensione", 100, 60, 150, 5, "%");
-        OPACITY = m.slider("opacity", "Opacita' sfondo", 70, 0, 100, 5, "%");
+        OPACITY = m.slider("opacity", "Opacità sfondo", 70, 0, 100, 5, "%");
         LABELS = m.color("labels", "Colore etichette", Setting.Color.FOLLOW);
         m.header("Cosa mostrare");
         FPS = m.toggle("fps", "FPS", true);
@@ -46,7 +46,7 @@ final class HudSettings {
         POTIONS = m.toggle("potions", "Effetti delle pozioni", true);
         KEYS = m.toggle("keys", "Tasti premuti e CPS", true);
         PING = m.toggle("ping", "Ping", false);
-        SPEED = m.toggle("speed", "Velocita'", false);
+        SPEED = m.toggle("speed", "Velocità", false);
     }
 
     private HudSettings() {

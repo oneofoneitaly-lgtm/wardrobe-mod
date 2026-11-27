@@ -35,10 +35,10 @@ public final class Theme {
         SECOND = m.add(new Setting.Color("second", "Colore secondario", 0x22D3EE, false))
                 .onlyIf(() -> PRESET.index() == PRESETS.length - 1);
         m.header("Vetro");
-        OPACITY = m.slider("opacity", "Opacita' pannelli", 78, 40, 100, 1, "%");
+        OPACITY = m.slider("opacity", "Opacità pannelli", 78, 40, 100, 1, "%");
         RADIUS = m.slider("radius", "Angoli arrotondati", 6, 0, 10, 1, " px");
         FONT = m.toggle("font", "Font moderno", true);
-        SPEED = m.slider("speed", "Velocita' animazioni", 1.0, 0.0, 2.0, 0.1, "x");
+        SPEED = m.slider("speed", "Velocità animazioni", 1.0, 0.0, 2.0, 0.1, "x");
         m.header("Menu");
         TITLE = m.toggle("title", "Schermata del titolo Aura", true);
         MENUS = m.toggle("menus", "Sfondo Aura nei menu", true);

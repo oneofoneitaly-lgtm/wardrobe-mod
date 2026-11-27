@@ -51,12 +51,11 @@ public final class AuraSkyMod {
         }
         float r = event.getRed(), g = event.getGreen(), b = event.getBlue();
         if (SkySettings.SKY.on() && SkyRenderer.hasSky(level)) {
-            int horizon = SkySettings.horizon();
-            float light = SkyRenderer.daylight(level);
+            int horizon = SkyRenderer.horizon(level);
             float k = SkySettings.INTENSITY.f() / 100F * 0.85F;
-            r += (Colors.red(horizon) * light - r) * k;
-            g += (Colors.green(horizon) * light - g) * k;
-            b += (Colors.blue(horizon) * light - b) * k;
+            r += (Colors.red(horizon) - r) * k;
+            g += (Colors.green(horizon) - g) * k;
+            b += (Colors.blue(horizon) - b) * k;
         }
         if (SkySettings.FOG_TINT.on()) {
             int fog = SkySettings.FOG_COLOR.get();
