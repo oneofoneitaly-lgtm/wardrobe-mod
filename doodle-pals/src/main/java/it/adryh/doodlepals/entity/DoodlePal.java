@@ -348,6 +348,8 @@ public class DoodlePal extends TamableAnimal {
                 if (!player.getInventory().add(page)) {
                     player.drop(page, false);
                 }
+                // a button held a moment too long must not wake the pal straight away
+                player.getCooldowns().addCooldown(DoodlePals.PAGE.get(), 20);
                 playSound(SoundEvents.BOOK_PAGE_TURN, 1.5F, 1.0F);
                 ((ServerLevel) level()).sendParticles(ParticleTypes.POOF, getX(), getY(0.5), getZ(), 20, 0.3, 0.3, 0.3, 0.02);
                 discard();

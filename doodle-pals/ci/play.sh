@@ -192,11 +192,14 @@ shot 53-woken 1
 cmd "/clear @s"
 cmd "/kill @e[type=doodlepals:pal,limit=1,sort=furthest]"
 cmd "/kill @e[type=item]"
+cmd "/clear @s"                 # in case the fallen pal's page was picked up
 cmd "/effect give $P slowness 600 255 true"
 cmd "/execute at @s rotated ~ 0 run tp $P ^ ^ ^1.8 facing entity @s feet"
 cmd "/tp @s ~ ~ ~ 0 32"
 sleep 1; xdotool keydown Shift_L; sleep 0.6; rclick; xdotool keyup Shift_L; sleep 1
+sleep 2
 check "unless entity $P" doodle-store-ok
+check "if entity @s[nbt={Inventory:[{id:\"doodlepals:doodle_page\"}]}]" doodle-pocket-ok
 shot 54-stored 1
 key j; shot 55-sketch-again 2
 key Escape
@@ -204,7 +207,7 @@ key Escape
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi
-for check in born ink three speed fight page wake store; do
+for check in born ink three speed fight page wake store pocket; do
   check="doodle-$check-ok"
   if grep -q "$check" "$log"; then step "passed $check"; else step "FAILED $check"; fi
 done
