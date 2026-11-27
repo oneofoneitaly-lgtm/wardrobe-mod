@@ -1,0 +1,22 @@
+AUTOTEST:JOINED
+AUTOTEST:SEND_COMMAND
+AUTOTEST:STATE 01-command-menu screen=WardrobeScreen
+AUTOTEST:SHOT 01-command-menu
+AUTOTEST:PRESSKEY
+AUTOTEST:STATE 02-key-menu screen=WardrobeScreen
+AUTOTEST:SHOT 02-key-menu
+AUTOTEST:WORN 6/6
+AUTOTEST:STATE 03-menu-worn screen=WardrobeScreen
+AUTOTEST:SHOT 03-menu-worn
+AUTOTEST:STATE 04-front screen=none
+AUTOTEST:SHOT 04-front
+AUTOTEST:STATE 05-back screen=none
+AUTOTEST:SHOT 05-back
+AUTOTEST:WORN 5/5
+AUTOTEST:STATE 06-back-2 screen=none
+AUTOTEST:SHOT 06-back-2
+AUTOTEST:STATE 07-front-2 screen=none
+AUTOTEST:SHOT 07-front-2
+AUTOTEST:STATE 08-after-reload screen=WardrobeScreen
+AUTOTEST:SHOT 08-after-reload
+AUTOTEST:DONE errors=0
