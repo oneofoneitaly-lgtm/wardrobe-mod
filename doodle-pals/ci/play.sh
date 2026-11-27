@@ -128,8 +128,7 @@ key j; tool 8; shot 23-key-opens 1; create
 key j; tool 8; tool 8; tool 8; create
 cmd "/execute store result score @s pals if entity $P"
 check "if score @s pals matches 3" doodle-three-ok
-key j; create; shot 24-too-many 0.5
-key Escape
+key j; create; shot 24-too-many 0.5     # the screen closes by itself
 sleep 2
 cmd "/effect clear $P"
 cmd "/execute at @e[tag=centre,limit=1] run tp $P ~ ~ ~3.2"

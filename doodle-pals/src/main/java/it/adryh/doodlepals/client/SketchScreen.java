@@ -359,6 +359,7 @@ public final class SketchScreen extends Screen {
                 remember();
                 Arrays.fill(pixels, (byte) 0);
                 eyes.clear();
+                nameBox.setValue("");
                 refresh();
             }
             default -> {
@@ -370,6 +371,7 @@ public final class SketchScreen extends Screen {
                 for (int eye : template.eyes()) {
                     eyes.add(eye);
                 }
+                nameBox.setValue("");   // a new drawing wants a new name
                 refresh();
             }
         }

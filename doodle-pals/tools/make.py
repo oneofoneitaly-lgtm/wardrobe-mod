@@ -112,7 +112,7 @@ def main():
         'ground': {'translation': [0, 3, 0], 'scale': [0.5, 0.5, 0.5]},
         'fixed': {'rotation': [0, 180, 0], 'scale': [0.9, 0.9, 0.9]},
         'thirdperson_righthand': {'translation': [0, 3, 1], 'scale': [0.55, 0.55, 0.55]},
-        'firstperson_righthand': {'rotation': [0, -25, 0], 'translation': [1, 2, 0], 'scale': [0.5, 0.5, 0.5]},
+        'firstperson_righthand': {'rotation': [0, -25, 0], 'translation': [1.5, 3, 0], 'scale': [0.32, 0.32, 0.32]},
     }})
     write(RES / 'data/doodlepals/recipe/sketchbook.json', {
         'type': 'minecraft:crafting_shapeless', 'category': 'misc',
