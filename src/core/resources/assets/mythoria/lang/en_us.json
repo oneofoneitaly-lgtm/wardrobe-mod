@@ -1,0 +1,20 @@
+{
+ "itemGroup.mythoria": "Mythoria",
+ "item.mythoria.crown": "Crown",
+ "item.mythoria.crown.tooltip": "Use it, or open the Market, to put your Crowns in the wallet",
+ "key.mythoria.market": "Open the Market",
+ "key.categories.mythoria": "Mythoria",
+ "mythoria.welcome": "Welcome to Mythoria! Press M or type /market to open the Market. Earn Crowns by defeating monsters and mining.",
+ "mythoria.wallet.deposit": "+%s Crowns  -  wallet: %s",
+ "mythoria.wallet.received": "You received %s Crowns. Wallet: %s",
+ "mythoria.wallet.balance": "Your wallet holds %s Crowns.",
+ "mythoria.market.title": "Mythoria Market",
+ "mythoria.market.crowns": "Crowns",
+ "mythoria.market.buy": "BUY  -  %s",
+ "mythoria.market.bought": "Purchased: %s",
+ "mythoria.market.poor": "Not enough Crowns",
+ "mythoria.category.creatures": "Creatures",
+ "mythoria.category.weapons": "Weapons",
+ "mythoria.category.armor": "Armor",
+ "mythoria.category.feast": "Feast"
+}

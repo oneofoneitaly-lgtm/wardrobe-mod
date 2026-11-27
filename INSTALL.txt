@@ -1,0 +1,24 @@
+MYTHORIA  -  fantasy modpack for Minecraft 1.21.1 (Forge)   by @Adryh01
+=======================================================================
+
+INSTALL
+  1. Install Forge 52.1.20 (or newer 52.x) for Minecraft 1.21.1.
+  2. Copy the five mythoria-*.jar files into your "mods" folder.
+     (Or import the CurseForge .zip / .mrpack in your launcher.)
+  On a server, put the same five jars on the server too.
+
+PLAY
+  M  or  /market ............ open the Market
+  Crowns .................... defeat monsters and mine ores (stone sometimes too)
+  /crowns ................... show your wallet
+  /crowns give <player> <n> . operators only
+
+CREATURES
+  Golden Griffin   wild in plains, meadows and savannas. Tame it with meat or buy the egg.
+                   Right click: ride. Space: climb. Look down + W: dive. Shift: dismount.
+                   Shift + right click: wait / follow.
+  Crystal Golem    boss. Rare in dark places, or summoned with the Golem Core.
+
+SWORDS      Phoenix Blade, Frost Fang, Storm Blade  (right click uses their power)
+ARMOR       Dragon Armor (full set: fire immunity)
+FEAST       Moon Apple, Fairy Cake, Dragon Drumstick, Elven Mead

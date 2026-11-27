@@ -1,0 +1,18 @@
+{
+ "item.mythoria_feast.moon_apple": "Moon Apple",
+ "item.mythoria_feast.moon_apple.tooltip": "Night Vision and Absorption",
+ "item.mythoria_feast.fairy_cake": "Fairy Cake",
+ "item.mythoria_feast.fairy_cake.tooltip": "Jump Boost and Slow Falling",
+ "item.mythoria_feast.dragon_drumstick": "Dragon Drumstick",
+ "item.mythoria_feast.dragon_drumstick.tooltip": "Strength and Fire Resistance - griffins love it",
+ "item.mythoria_feast.elven_mead": "Elven Mead",
+ "item.mythoria_feast.elven_mead.tooltip": "Speed and Regeneration",
+ "market.mythoria_feast.moon_apple": "Moon Apple",
+ "market.mythoria_feast.moon_apple.desc": "See in the dark, with extra hearts.",
+ "market.mythoria_feast.fairy_cake": "Fairy Cake",
+ "market.mythoria_feast.fairy_cake.desc": "Jump high and fall like a feather.",
+ "market.mythoria_feast.dragon_drumstick": "Dragon Drumstick",
+ "market.mythoria_feast.dragon_drumstick.desc": "A hearty meal: strength and fire resistance.",
+ "market.mythoria_feast.elven_mead": "Elven Mead",
+ "market.mythoria_feast.elven_mead.desc": "A sweet drink: speed and regeneration."
+}

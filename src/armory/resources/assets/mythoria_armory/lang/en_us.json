@@ -1,0 +1,17 @@
+{
+ "item.mythoria_armory.dragon_helmet": "Dragon Helmet",
+ "item.mythoria_armory.dragon_chestplate": "Dragon Chestplate",
+ "item.mythoria_armory.dragon_leggings": "Dragon Leggings",
+ "item.mythoria_armory.dragon_boots": "Dragon Boots",
+ "item.mythoria_armory.set_bonus": "Full set: fire immunity",
+ "market.mythoria_armory.dragon_set": "Dragon Armor (full set)",
+ "market.mythoria_armory.dragon_set.desc": "All four pieces. Full set: fire immunity.",
+ "market.mythoria_armory.dragon_helmet": "Dragon Helmet",
+ "market.mythoria_armory.dragon_helmet.desc": "Horned helmet with a burning gem.",
+ "market.mythoria_armory.dragon_chestplate": "Dragon Chestplate",
+ "market.mythoria_armory.dragon_chestplate.desc": "Scales, spiked shoulders and little wings.",
+ "market.mythoria_armory.dragon_leggings": "Dragon Leggings",
+ "market.mythoria_armory.dragon_leggings.desc": "Golden belt and armored knees.",
+ "market.mythoria_armory.dragon_boots": "Dragon Boots",
+ "market.mythoria_armory.dragon_boots.desc": "Clawed boots of a true dragon."
+}

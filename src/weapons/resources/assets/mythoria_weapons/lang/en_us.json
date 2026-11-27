@@ -1,0 +1,17 @@
+{
+ "item.mythoria_weapons.phoenix_blade": "Phoenix Blade",
+ "item.mythoria_weapons.phoenix_blade.hit": "Hit: sets enemies on fire",
+ "item.mythoria_weapons.phoenix_blade.use": "Right click: Flame Wave",
+ "item.mythoria_weapons.frost_fang": "Frost Fang",
+ "item.mythoria_weapons.frost_fang.hit": "Hit: freezes and slows",
+ "item.mythoria_weapons.frost_fang.use": "Right click: Frost Nova",
+ "item.mythoria_weapons.storm_blade": "Storm Blade",
+ "item.mythoria_weapons.storm_blade.hit": "Hit: may call lightning",
+ "item.mythoria_weapons.storm_blade.use": "Right click: strike where you look",
+ "market.mythoria_weapons.phoenix_blade": "Phoenix Blade",
+ "market.mythoria_weapons.phoenix_blade.desc": "Burns enemies. Right click for a Flame Wave.",
+ "market.mythoria_weapons.frost_fang": "Frost Fang",
+ "market.mythoria_weapons.frost_fang.desc": "Slows enemies. Right click for a Frost Nova.",
+ "market.mythoria_weapons.storm_blade": "Storm Blade",
+ "market.mythoria_weapons.storm_blade.desc": "Right click to strike with lightning."
+}

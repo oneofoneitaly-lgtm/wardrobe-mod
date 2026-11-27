@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="mythoria_weapons"
+version="1.0.0"
+displayName="Mythoria Weapons"
+authors="@Adryh01"
+logoFile="mythoria_weapons_logo.png"
+description="Three 3D fantasy swords with powers."
+
+[[dependencies.mythoria_weapons]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_weapons]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_weapons]]
+modId="mythoria"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"

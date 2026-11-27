@@ -1,20 +1,20 @@
-// Aura modpack by @Adryh01 - five Forge mods for Minecraft 1.21.1, built with:  gradle build
+// Mythoria modpack by @Adryh01 - five Forge mods for Minecraft 1.21.1, built with:  gradle build
 plugins {
     id 'java'
     id 'net.minecraftforge.gradle' version '[7.0.3,8)'
 }
 
 version = project.mod_version
-group = 'it.adryh.aura'
+group = 'it.adryh.mythoria'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-// the menu mod is the shared library, the others are compiled against it
-def addons = ['hud', 'sky', 'fx', 'inventory']
+// the core mod (market and coins) is shared, the others are compiled against it
+def addons = ['creatures', 'weapons', 'armory', 'feast']
 
 sourceSets {
     main {
-        java.srcDirs = ['src/menu/java']
-        resources.srcDirs = ['src/menu/resources']
+        java.srcDirs = ['src/core/java']
+        resources.srcDirs = ['src/core/resources']
     }
     addons.each { name ->
         create(name) {
@@ -44,12 +44,12 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.named('jar', Jar) {
-    archiveBaseName = 'aura-menu'
+    archiveBaseName = 'mythoria-core'
 }
 
 addons.each { name ->
     def task = tasks.register("${name}Jar", Jar) {
-        archiveBaseName = "aura-${name}"
+        archiveBaseName = "mythoria-${name}"
         from sourceSets.named(name).map { it.output }
     }
     tasks.named('assemble') { dependsOn task }

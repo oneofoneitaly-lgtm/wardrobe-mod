@@ -1,0 +1,18 @@
+{
+ "item.mythoria_creatures.griffin_egg": "Griffin Egg",
+ "item.mythoria_creatures.griffin_egg.tooltip": "Use it on the ground: your own griffin hatches",
+ "item.mythoria_creatures.golem_core": "Golem Core",
+ "item.mythoria_creatures.golem_core.tooltip": "Use it on the ground to wake the boss. Be ready!",
+ "entity.mythoria_creatures.golden_griffin": "Golden Griffin",
+ "entity.mythoria_creatures.crystal_golem": "Crystal Golem",
+ "market.mythoria_creatures.griffin_egg": "Golden Griffin",
+ "market.mythoria_creatures.griffin_egg.desc": "An egg that hatches your mount. Ride it and fly!",
+ "market.mythoria_creatures.golem_core": "Crystal Golem",
+ "market.mythoria_creatures.golem_core.desc": "Summons the boss. Defeat it for a rich reward.",
+ "mythoria.griffin.wild": "Offer raw or cooked meat to tame this griffin",
+ "mythoria.griffin.tamed": "The griffin trusts you now!",
+ "mythoria.griffin.sit": "Your griffin waits here",
+ "mythoria.griffin.follow": "Your griffin follows you",
+ "mythoria.griffin.ride": "Space: climb  -  look down + W: dive  -  Shift: dismount",
+ "mythoria.golem.peaceful": "The Golem cannot wake up in Peaceful difficulty"
+}

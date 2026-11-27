@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="mythoria_creatures"
+version="1.0.0"
+displayName="Mythoria Creatures"
+authors="@Adryh01"
+logoFile="mythoria_creatures_logo.png"
+description="The rideable Golden Griffin and the Crystal Golem boss."
+
+[[dependencies.mythoria_creatures]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_creatures]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_creatures]]
+modId="mythoria"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"

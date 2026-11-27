@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="mythoria"
+version="1.0.0"
+displayName="Mythoria Market"
+authors="@Adryh01"
+logoFile="mythoria_logo.png"
+description="Crowns, wallet and the fantasy market of the Mythoria modpack."
+
+[[dependencies.mythoria]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"

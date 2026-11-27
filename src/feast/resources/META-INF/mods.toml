@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="mythoria_feast"
+version="1.0.0"
+displayName="Mythoria Feast"
+authors="@Adryh01"
+logoFile="mythoria_feast_logo.png"
+description="Magical 3D food and drinks."
+
+[[dependencies.mythoria_feast]]
+modId="forge"
+mandatory=true
+versionRange="[52,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_feast]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.mythoria_feast]]
+modId="mythoria"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"

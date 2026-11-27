@@ -1,4 +1,4 @@
-name: Aura modpack (by @Adryh01)
+name: Mythoria modpack (by @Adryh01)
 
 on:
   push:
@@ -13,9 +13,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  aura:
+  mythoria:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -33,7 +33,7 @@ jobs:
       - name: Package
         run: |
           python3 ci/pack.py | tee report/pack.txt
-          mkdir -p jars && cp build/libs/aura-*.jar jars/
+          mkdir -p jars && cp build/libs/mythoria-*.jar jars/
       - name: Virtual screen and launcher
         run: |
           sudo apt-get update -q && sudo apt-get install -y -q xvfb xdotool imagemagick libgl1-mesa-dri
