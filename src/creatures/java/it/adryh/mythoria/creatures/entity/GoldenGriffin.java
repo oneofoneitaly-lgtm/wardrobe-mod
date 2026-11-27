@@ -9,10 +9,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -167,6 +170,27 @@ public class GoldenGriffin extends TamableAnimal {
     }
 
     // ------------------------------------------------------------------ riding and flying
+    /** No gravity while ridden: the flight is steered by hand, and servers would otherwise kick the rider for flying. */
+    @Override
+    protected void addPassenger(Entity passenger) {
+        super.addPassenger(passenger);
+        if (!level().isClientSide() && passenger instanceof Player player && isOwnedBy(player)) {
+            setNoGravity(true);
+        }
+    }
+
+    @Override
+    protected void removePassenger(Entity passenger) {
+        super.removePassenger(passenger);
+        if (!level().isClientSide() && passenger instanceof Player player) {
+            setNoGravity(false);
+            // jumping off high in the sky: float down safely
+            if (level().noCollision(this, getBoundingBox().expandTowards(0.0, -4.0, 0.0))) {
+                player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 300));
+            }
+        }
+    }
+
     @Override
     public LivingEntity getControllingPassenger() {
         if (getFirstPassenger() instanceof Player player && isOwnedBy(player)) {
@@ -241,7 +265,9 @@ public class GoldenGriffin extends TamableAnimal {
     public void tick() {
         super.tick();
         if (level().isClientSide()) {
-            boolean airborne = !onGround() && !isInWater() && !isPassenger();
+            // the ground check also covers a resting griffin whose "on ground" state has not reached the client yet
+            boolean airborne = !onGround() && !isInWater() && !isPassenger()
+                    && level().noCollision(this, getBoundingBox().move(0.0, -0.6, 0.0));
             flyOld = fly;
             fly = Mth.clamp(fly + (airborne ? 0.12F : -0.15F), 0.0F, 1.0F);
             wingOld = wing;

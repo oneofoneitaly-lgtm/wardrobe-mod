@@ -48,6 +48,6 @@ public final class Weapons {
 
     private static void sell(String name, int order, int price) {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(ID, name);
-        MarketCatalog.add(new MarketEntry(id, MarketCategory.WEAPONS, order, price, List.of(id), 1, null, 50.0F, 0.25F));
+        MarketCatalog.add(new MarketEntry(id, MarketCategory.WEAPONS, order, price, List.of(id), 1, null, 40.0F, 0.25F));
     }
 }

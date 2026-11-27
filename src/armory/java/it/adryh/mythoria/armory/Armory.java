@@ -68,7 +68,7 @@ public final class Armory {
         ITEMS.register(bus);
         MinecraftForge.EVENT_BUS.addListener((TickEvent.PlayerTickEvent.Post event) -> setBonus(event));
 
-        sell("dragon_set", 0, 900, SET.stream().map(o -> o.getId()).toList(), 52.0F, 1.1F);
+        sell("dragon_set", 0, 900, SET.stream().map(o -> o.getId()).toList(), 40.0F, 1.1F);
         int[] prices = {200, 350, 300, 180};
         for (int i = 0; i < SET.size(); i++) {
             ResourceLocation item = SET.get(i).getId();

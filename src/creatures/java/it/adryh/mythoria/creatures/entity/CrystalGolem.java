@@ -39,6 +39,7 @@ public class CrystalGolem extends Monster {
     private static final byte PUNCH = 100;
     private static final byte SLAM = 101;
     private static final int SLAM_WINDUP = 18;
+    private static final double BAR_RANGE = 48.0;
 
     private final ServerBossEvent bossBar = new ServerBossEvent(getDisplayName(),
             BossEvent.BossBarColor.BLUE, BossEvent.BossBarOverlay.NOTCHED_10);
@@ -101,7 +102,6 @@ public class CrystalGolem extends Monster {
         boolean enraged = getHealth() < getMaxHealth() / 2.0F;
         getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(enraged ? 0.31 : 0.24);
         bossBar.setColor(enraged ? BossEvent.BossBarColor.PURPLE : BossEvent.BossBarColor.BLUE);
-        bossBar.setProgress(getHealth() / getMaxHealth());
 
         if (slamDelay > 0) {
             if (--slamDelay == 0) {
@@ -153,6 +153,9 @@ public class CrystalGolem extends Monster {
     @Override
     public void tick() {
         super.tick();
+        if (level() instanceof ServerLevel server) {
+            updateBossBar(server);
+        }
         if (level().isClientSide()) {
             if (punchTicks > 0) {
                 punchTicks--;
@@ -177,16 +180,31 @@ public class CrystalGolem extends Monster {
         }
     }
 
-    @Override
-    public void startSeenByPlayer(ServerPlayer player) {
-        super.startSeenByPlayer(player);
-        bossBar.addPlayer(player);
+    /** Only players close to the fight see the bar: not someone walking far above a golem in a cave. */
+    private void updateBossBar(ServerLevel server) {
+        bossBar.setProgress(getHealth() / getMaxHealth());
+        if (tickCount % 10 != 1) {
+            return;
+        }
+        for (ServerPlayer player : server.players()) {
+            if (isAlive() && distanceToSqr(player) < BAR_RANGE * BAR_RANGE) {
+                bossBar.addPlayer(player);
+            } else {
+                bossBar.removePlayer(player);
+            }
+        }
     }
 
     @Override
     public void stopSeenByPlayer(ServerPlayer player) {
         super.stopSeenByPlayer(player);
         bossBar.removePlayer(player);
+    }
+
+    @Override
+    public void remove(Entity.RemovalReason reason) {
+        super.remove(reason);
+        bossBar.removeAllPlayers();
     }
 
     @Override

@@ -113,6 +113,14 @@ for sword in phoenix_blade frost_fang storm_blade; do
   cmd "/kill @e[type=item]"
 done
 
+# sword seen from the side, to check the grip
+cmd "/clear @s"
+cmd "/summon armor_stand ~ ~ ~2.5 {ShowArms:1b,Rotation:[90f,0f],HandItems:[{id:\"mythoria_weapons:frost_fang\",count:1},{}]}"
+cmd "/tp @s ~ ~ ~ 0 18"
+key F1; shot 34-sword-side 3; key F1
+cmd "/kill @e[type=armor_stand]"
+cmd "/kill @e[type=item]"
+
 # ---- armour
 cmd "/clear @s"
 cmd "/item replace entity @s armor.head with mythoria_armory:dragon_helmet"
@@ -147,20 +155,22 @@ cmd "/effect clear @s"
 cmd "/clear @s"
 
 # ---- griffin
+G="@e[type=mythoria_creatures:golden_griffin]"
 cmd "/tp @s ~ ~ ~ 0 12"
 key F1
-cmd "/summon mythoria_creatures:golden_griffin ~ ~ ~5 {NoAI:1b,Rotation:[145f,0f]}"
+cmd "/summon mythoria_creatures:golden_griffin ~ ~ ~5 {Rotation:[145f,0f]}"
+cmd "/effect give $G slowness 600 255 true"
 shot 60-griffin-wild 5
-cmd "/kill @e[type=mythoria_creatures:golden_griffin]"
+cmd "/kill $G"
 sleep 1.5
-cmd "/summon mythoria_creatures:golden_griffin ~ ~ ~5 {NoAI:1b,Rotation:[90f,0f]}"
+cmd "/summon mythoria_creatures:golden_griffin ~ ~ ~5 {Rotation:[90f,0f],NoAI:1b,OnGround:1b}"
 shot 61-griffin-side 4
-cmd "/tp @e[type=mythoria_creatures:golden_griffin] ~ ~-300 ~"
+cmd "/tp $G ~ ~-300 ~"
 sleep 2
 cmd "/summon mythoria_creatures:golden_griffin ~ ~2.5 ~7 {NoAI:1b,NoGravity:1b,Rotation:[160f,0f]}"
 cmd "/tp @s ~ ~ ~ 0 -6"
 shot 62-griffin-spread-wings 4
-cmd "/tp @e[type=mythoria_creatures:golden_griffin] ~ ~-300 ~"
+cmd "/tp $G ~ ~-300 ~"
 sleep 2
 key F1
 hold "mythoria_creatures:griffin_egg"
@@ -170,43 +180,56 @@ cmd "/tp @s ~ ~ ~ 0 18"
 shot 63-griffin-hatched 2
 cmd "/clear @s"
 cmd "/tp @s ~ ~ ~ 0 25"
-sleep 1; rclick; shot 64-griffin-mounted 2
-cmd "/tp @s ~ ~ ~ 0 5"
+sleep 1; rclick; sleep 1
+# no teleporting from here on (it would dismount): look around with the mouse
+xdotool mousemove_relative -- 0 -130; shot 64-griffin-mounted 2
 key F5; shot 65-riding-back 3
-xdotool keydown space; sleep 2.5; shot 66-flying-up 0.2
-xdotool keydown w; sleep 1.2; xdotool keyup space; shot 67-flying 0.4; xdotool keyup w
-key F5; shot 68-flying-front 0.3
+xdotool keydown space; sleep 3.5; shot 66-flying-up 0.1
+xdotool keydown w; sleep 1.2; shot 67-flying 0.1; xdotool keyup w; xdotool keyup space
+cmd "/execute if entity @s[y=204,dy=200] run say mythoria-flight-ok"
+xdotool keydown space; sleep 1.5; key F5; shot 68-flying-front 0.1; xdotool keyup space
 key F5
-cmd "/gamemode creative"
+# jump off in mid air
+xdotool keydown space; sleep 1.5; xdotool keyup space
 xdotool keydown Shift_L; sleep 0.5; xdotool keyup Shift_L
-cmd "/kill @e[type=mythoria_creatures:golden_griffin]"
+shot 69-dismount 0.5
+cmd "/execute if entity @s[nbt={active_effects:[{id:\"minecraft:slow_falling\"}]}] run say mythoria-slowfall-ok"
+cmd "/gamemode creative"
+cmd "/kill $G"
 cmd "/tp @s ~ 200 ~ 0 8"
 cmd "/gamemode survival"
+cmd "/effect clear @s"
 sleep 3
 cmd "/kill @e[type=item]"
 
 # ---- golem
+B="@e[type=mythoria_creatures:crystal_golem]"
+N="@e[type=mythoria_creatures:crystal_golem,limit=1,sort=nearest]"
 key F1
 cmd "/summon mythoria_creatures:crystal_golem ~ ~ ~7 {NoAI:1b,Rotation:[180f,0f],PersistenceRequired:1b}"
 cmd "/tp @s ~ ~ ~ 0 -4"
 shot 70-golem-front-nohud 5
 key F1; shot 71-golem-bossbar 2
-cmd "/tp @e[type=mythoria_creatures:crystal_golem] ~ ~-300 ~"
-sleep 2
+cmd "/kill $B"
+sleep 3
+cmd "/kill @e[type=item]"
 cmd "/summon mythoria_creatures:crystal_golem ~ ~ ~7 {NoAI:1b,Rotation:[135f,0f],PersistenceRequired:1b}"
 shot 72-golem-quarter 4
-cmd "/data merge entity @e[type=mythoria_creatures:crystal_golem,limit=1,sort=nearest] {NoAI:0b}"
-cmd "/effect give @s resistance 600 4"
-cmd "/effect give @s regeneration 600 4"
+cmd "/data merge entity $N {NoAI:0b}"
+cmd "/effect give @s resistance 600 4 true"
+cmd "/effect give @s regeneration 600 4 true"
 cmd "/tp @s ~ ~ ~ 0 0"
 shot 73-golem-attack 2
 shot 74-golem-fight 1
 shot 75-golem-fight-later 3
-cmd "/damage @e[type=mythoria_creatures:crystal_golem,limit=1] 1000 minecraft:player_attack by @s"
-cmd "/tp @s ~ ~ ~ 0 25"
+cmd "/data merge entity $N {NoAI:1b}"
+cmd "/execute at $N run tp @s ~ 200 ~-6 0 25"
+cmd "/damage $N 1000 minecraft:player_attack by @s"
 shot 76-golem-rewards 3
+cmd "/execute at @s run tp @e[type=item] @s"
+sleep 3
 cmd "/summon zombie ~ ~ ~3 {NoAI:1b}"
-cmd "/damage @e[type=zombie,limit=1] 100 minecraft:player_attack by @s"
+cmd "/damage @e[type=zombie,limit=1,sort=nearest] 100 minecraft:player_attack by @s"
 shot 77-zombie-coins 3
 cmd "/market"; shot 78-market-wallet 3
 key Escape
@@ -216,4 +239,7 @@ click 640 443; sleep 15; shot 80-back-to-title 4   # not essential
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi
+for check in mythoria-flight-ok mythoria-slowfall-ok; do
+  if grep -q "$check" "$log"; then step "passed $check"; else step "FAILED $check"; fi
+done
 finish "done" 0

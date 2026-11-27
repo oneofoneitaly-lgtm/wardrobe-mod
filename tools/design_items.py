@@ -8,13 +8,13 @@ def held(centre_y, length, grip_y):
     def hand(T0, R_dir, s, vs):
         d = vs * -5 - s * g * .7071
         return [round(T0[i] + d * R_dir[i], 2) for i in range(3)]
-    third = hand((0, 4, .5), (0, 1.393, -.245), .7, .85)
-    first = hand((1.13, 3.2, 1.13), (0, 1.329, .483), .52, .68)
+    third = hand((0, 4, .5), (0, 1.393, -.245), .56, .85)
+    first = [.6, round(4.6 - (grip_y - 1) * .32, 2), .4]
     return {
-        'thirdperson_righthand': {'rotation': [0, -90, 10], 'translation': third, 'scale': [.7] * 3},
-        'thirdperson_lefthand': {'rotation': [0, 90, -10], 'translation': third, 'scale': [.7] * 3},
-        'firstperson_righthand': {'rotation': [0, -90, -20], 'translation': first, 'scale': [.52] * 3},
-        'firstperson_lefthand': {'rotation': [0, 90, 20], 'translation': first, 'scale': [.52] * 3},
+        'thirdperson_righthand': {'rotation': [0, -90, 10], 'translation': third, 'scale': [.56] * 3},
+        'thirdperson_lefthand': {'rotation': [0, 90, -10], 'translation': third, 'scale': [.56] * 3},
+        'firstperson_righthand': {'rotation': [0, -80, 16], 'translation': first, 'scale': [.34] * 3},
+        'firstperson_lefthand': {'rotation': [0, 80, -16], 'translation': first, 'scale': [.34] * 3},
         'gui': {'rotation': [0, 0, -45], 'translation': [round(t, 2), round(t, 2), 0], 'scale': [round(gs, 3)] * 3},
         'ground': {'rotation': [0, 0, 0], 'translation': [0, 3, 0], 'scale': [.45] * 3},
         'fixed': {'rotation': [0, 180, -45], 'translation': [round(t, 2), round(t, 2), 0], 'scale': [round(gs, 3)] * 3},
@@ -24,8 +24,8 @@ def compact(scale=1.0, gui_rot=(25, 40, 0), gui_scale=1.0, gui_y=0.0):
     return {
         'thirdperson_righthand': {'rotation': [0, 0, 0], 'translation': [0, 2.5, .5], 'scale': [.45 * scale] * 3},
         'thirdperson_lefthand': {'rotation': [0, 0, 0], 'translation': [0, 2.5, .5], 'scale': [.45 * scale] * 3},
-        'firstperson_righthand': {'rotation': [0, 35, 0], 'translation': [1, 3, 0], 'scale': [.55 * scale] * 3},
-        'firstperson_lefthand': {'rotation': [0, -35, 0], 'translation': [1, 3, 0], 'scale': [.55 * scale] * 3},
+        'firstperson_righthand': {'rotation': [0, 35, 0], 'translation': [1, 3.8, 0], 'scale': [.4 * scale] * 3},
+        'firstperson_lefthand': {'rotation': [0, -35, 0], 'translation': [1, 3.8, 0], 'scale': [.4 * scale] * 3},
         'gui': {'rotation': list(gui_rot), 'translation': [0, gui_y, 0], 'scale': [gui_scale] * 3},
         'ground': {'rotation': [0, 0, 0], 'translation': [0, 3, 0], 'scale': [.4 * scale] * 3},
         'fixed': {'rotation': [0, 180, 0], 'translation': [0, 0, 0], 'scale': [.9 * scale] * 3},

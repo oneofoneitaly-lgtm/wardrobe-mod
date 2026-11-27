@@ -67,6 +67,12 @@ final class GriffinModel extends HierarchicalModel<GoldenGriffin> {
         neck.xRot += Mth.sin(age * 0.07F) * 0.03F;
         jaw.xRot += Math.max(0.0F, Mth.sin(age * 0.11F) - 0.92F) * 4.0F;
 
+        if (entity.isVehicle()) {
+            // lower the neck so the rider can see over the head
+            neck.xRot += 0.55F;
+            head.xRot -= 0.45F;
+        }
+
         tail.yRot += Mth.sin(age * 0.09F) * 0.25F;
         tailMid.yRot += Mth.sin(age * 0.09F - 0.8F) * 0.3F;
 
