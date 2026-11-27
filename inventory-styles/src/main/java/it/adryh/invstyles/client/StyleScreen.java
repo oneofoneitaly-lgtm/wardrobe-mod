@@ -174,8 +174,10 @@ public final class StyleScreen extends Screen {
         RenderSystem.disableBlend();
         if (detailed) {
             if (category != Category.HOTBAR) {
-                graphics.drawString(font, name(category), 8, category == Category.CREATIVE ? 6 : category == Category.INVENTORY ? 73 : 6,
-                        0xFF000000 | style.text(Config.accent()), false);
+                // the player's inventory has its title above the little crafting grid
+                boolean own = category == Category.INVENTORY;
+                graphics.drawString(font, own ? Component.translatable("container.crafting") : name(category),
+                        own ? 97 : 8, own ? 8 : 6, 0xFF000000 | style.text(Config.accent()), false);
             }
             items(graphics, category);
         }

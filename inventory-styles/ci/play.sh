@@ -26,6 +26,7 @@ finish() {
   cp "$log" "$out/latest.log" 2>/dev/null
   cp -r run/crash-reports "$out/" 2>/dev/null
   cp run/config/invstyles.properties "$out/" 2>/dev/null
+  grep "\[invstyles\]" run/logs/debug.log > "$out/screens.txt" 2>/dev/null
   grep -iE "invstyles.*(exception|unable|missing|failed|error|could not)|(unable|missing|failed|error).*invstyles|mixin.*(error|fail)" "$log" > "$out/problems.txt" 2>/dev/null
   alive && kill $game
   pkill -f net.minecraftforge 2>/dev/null
@@ -99,7 +100,8 @@ open_block() { # name block [nbt]
   cmd "/execute at @e[tag=centre,limit=1] run setblock ~ ~ ~2 $2$3"
   sleep 0.6; rclick; shot "$1" 2.5; key Escape; sleep 0.5
 }
-CHEST='{Items:[{Slot:0b,id:"minecraft:diamond",count:12},{Slot:4b,id:"minecraft:cake",count:1},{Slot:12b,id:"minecraft:netherite_sword",count:1},{Slot:22b,id:"minecraft:amethyst_shard",count:40},{Slot:26b,id:"minecraft:nether_star",count:3}]}'
+# commands typed in chat are cut at 256 characters: keep the block data short
+CHEST='{Items:[{Slot:0b,id:"diamond",count:12},{Slot:13b,id:"cake",count:1},{Slot:26b,id:"nether_star",count:3}]}'
 FURNACE='{BurnTime:3000s,CookTime:100s,CookTimeTotal:200s,Items:[{Slot:0b,id:"minecraft:raw_iron",count:20},{Slot:1b,id:"minecraft:coal",count:9},{Slot:2b,id:"minecraft:iron_ingot",count:4}]}'
 BREW='{BrewTime:200s,Fuel:12b,Items:[{Slot:3b,id:"minecraft:nether_wart",count:3},{Slot:0b,id:"minecraft:potion",count:1},{Slot:4b,id:"minecraft:blaze_powder",count:5}]}'
 
@@ -141,7 +143,9 @@ more() { # style-name
   open_block 40-$1-beacon beacon
   open_block 41-$1-crafter crafter
   home 15
-  cmd "/execute at @e[tag=centre,limit=1] run summon villager ~ ~ ~2 {NoAI:1b,VillagerData:{profession:\"minecraft:librarian\",level:3,type:\"minecraft:plains\"},Offers:{Recipes:[{buy:{id:\"minecraft:emerald\",count:3},sell:{id:\"minecraft:book\",count:1},maxUses:9},{buy:{id:\"minecraft:paper\",count:24},sell:{id:\"minecraft:emerald\",count:1},maxUses:9}]}}"
+  cmd "/execute at @e[tag=centre,limit=1] run setblock ~ ~ ~2 air"      # room for the animals
+  cmd "/kill @e[type=item]"
+  cmd "/execute at @e[tag=centre,limit=1] run summon villager ~ ~ ~2 {NoAI:1b,VillagerData:{profession:\"librarian\",level:3,type:\"plains\"}}"
   sleep 1; rclick; shot 42-$1-villager 2.5; key Escape
   cmd "/kill @e[type=villager]"
   cmd "/execute at @e[tag=centre,limit=1] run summon horse ~ ~ ~2.5 {NoAI:1b,Tame:1b}"
@@ -180,11 +184,17 @@ shot 61-after-reload-hotbar 1
 alive || finish "client crashed" 1
 if ls run/crash-reports/* >/dev/null 2>&1; then finish "crash report found" 1; fi
 if grep -q "failed to load a valid ResourcePackInfo" "$log"; then finish "bad pack metadata" 1; fi
-passed() { if grep -qE "$2" "$log"; then step "passed $1"; else step "FAILED $1"; fi; }
+passed() { if grep -qE "$2" "${3:-$log}"; then step "passed $1"; else step "FAILED $1"; fi; }
 passed start "\[invstyles\] restyled [1-9][0-9]+ textures of all"
 passed menu-neon "restyled [1-9][0-9]* textures of chests \(neon"
 passed command "restyled [1-9][0-9]* textures of inventory \(neon"
 if grep -q "Could not restyle" "$log"; then step "FAILED restyle-errors"; else step "passed restyle-errors"; fi
 if grep -q "hotbar=pastel" run/config/invstyles.properties && grep -q "colour=emerald" run/config/invstyles.properties; then
   step "passed saved"; else step "FAILED saved"; fi
+for screen in Inventory Creative Container Crafting Furnace Anvil Enchantment BrewingStand ShulkerBox Dispenser \
+  Hopper Smoker Stonecutter Loom CartographyTable Smithing Grindstone Beacon Crafter Merchant HorseInventory; do
+  suffix=Screen
+  [ $screen = Creative ] && suffix=ModeInventoryScreen
+  passed "screen-$screen" "\[invstyles\] opened $screen$suffix" run/logs/debug.log
+done
 finish "done" 0

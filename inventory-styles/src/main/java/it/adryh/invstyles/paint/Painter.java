@@ -27,7 +27,7 @@ public final class Painter {
             return pixels.clone();
         }
         Painter painter = new Painter(pixels, w, h);
-        return path.contains("/hud/") ? painter.hotbar(path, style, accent) : painter.container(style, accent);
+        return path.contains("/hud/") ? painter.hotbar(path, style, accent) : painter.container(path, style, accent);
     }
 
     private int alpha(int x, int y) {
@@ -113,7 +113,51 @@ public final class Painter {
         return found;
     }
 
-    private int[] container(Style style, Accent accent) {
+    /**
+     * Large flat areas of mid grey that are not slots (the inside of the recipe book, the crafter
+     * grid): every pixel of any solid 9x9 square. Arrows and other drawings are thinner.
+     */
+    private boolean[] wells() {
+        final int side = 9;
+        boolean[] well = new boolean[w * h];
+        int[] run = new int[w * h];      // side of the largest one-colour square ending here
+        for (int y = 0; y < h; y++) {
+            for (int x = 0; x < w; x++) {
+                int c = rgb(x, y);
+                if (c < 0 || !grey(c) || light(c) < 0.35F || light(c) > 0.7F) {
+                    continue;
+                }
+                int i = y * w + x;
+                boolean same = x > 0 && y > 0 && rgb(x - 1, y) == c && rgb(x, y - 1) == c && rgb(x - 1, y - 1) == c;
+                run[i] = same ? 1 + Math.min(run[i - 1], Math.min(run[i - w], run[i - w - 1])) : 1;
+                if (run[i] >= side) {
+                    for (int by = y - side + 1; by <= y; by++) {
+                        for (int bx = x - side + 1; bx <= x; bx++) {
+                            well[by * w + bx] = true;
+                        }
+                    }
+                }
+            }
+        }
+        return well;
+    }
+
+    /** Textures whose brownish areas are really text fields and lists: they follow the style too. */
+    private static boolean hasBrownFields(String path) {
+        return path.endsWith("/stonecutter.png") || path.endsWith("/loom.png") || path.contains("text_field")
+                || path.endsWith("/enchantment_slot_disabled.png");
+    }
+
+    private static boolean dullBrown(int c) {
+        int r = c >> 16 & 255;
+        int g = c >> 8 & 255;
+        int b = c & 255;
+        return r >= g && g >= b && r - b > 10 && r - b <= 48 && light(c) < 0.5F;
+    }
+
+    private int[] container(String path, Style style, Accent accent) {
+        boolean[] well = wells();
+        boolean fields = hasBrownFields(path);
         int width = style.frameWidth();
         int[] depth = depths(width);
         int[][] boxes = slots();
@@ -140,8 +184,13 @@ public final class Painter {
                     } else {
                         painted = style.mark(light(c), x, y, accent);
                     }
+                } else if (fields && dullBrown(c)) {
+                    // keep the bevel of the original: lighter pixels stay lighter
+                    painted = Paint.mix(style.window(x, y, accent), style.mark(0.5F, x, y, accent), (light(c) - 0.22F) * 2.0F);
                 } else if (!grey(c)) {
                     painted = source[i];
+                } else if (well[i]) {
+                    painted = style.slot(5, 5, 18, 18, x, y, accent);
                 } else if (d > 0 && d <= width && (d <= 3 && (light(c) < 0.1F || c == WHITE || c == SHADOW) || c == PANEL)
                         && w >= 20 && h >= 20) {
                     painted = style.frame(d, x, y, accent);
