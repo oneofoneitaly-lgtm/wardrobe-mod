@@ -29,9 +29,9 @@ while kill -0 $game 2>/dev/null; do
     win=$(xdotool search --name Minecraft | tail -1)
     [ -n "$win" ] && xdotool windowmove "$win" 0 0 windowactivate "$win" 2>/dev/null
     sleep 3; shot 00-title
-    click 640 276                       # Singleplayer
+    click 640 293                       # Singleplayer
     sleep 8; shot 00-create-world
-    click 482 692                       # Create New World
+    click 482 684                       # Create New World
     sleep 5; shot 00-loading
     stage=world; world_start=$SECONDS
   fi
@@ -53,4 +53,6 @@ cp run/logs/latest.log report/latest.log 2>/dev/null
 cp -r run/crash-reports report/ 2>/dev/null
 grep "AUTOTEST:" report/client.log | sed 's/.*AUTOTEST:/AUTOTEST:/' > report/result.txt
 cat report/result.txt
+# a broken pack.mcmeta shows a warning screen to the player
+if grep -q "failed to load a valid ResourcePackInfo" report/client.log; then echo "BAD PACK METADATA"; exit 1; fi
 grep -q "AUTOTEST:DONE" report/client.log
