@@ -18,6 +18,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -58,6 +59,7 @@ public final class Creatures {
         ITEMS.register(bus);
         bus.addListener((EntityAttributeCreationEvent event) -> attributes(event));
         bus.addListener((SpawnPlacementRegisterEvent event) -> spawnRules(event));
+        WildSpawns.register(MinecraftForge.EVENT_BUS);
         sell("griffin_egg", 0, 400, "golden_griffin", 31.0F, 0.95F);
         sell("golem_core", 1, 150, "crystal_golem", 25.0F, 1.55F);
         if (FMLEnvironment.dist == Dist.CLIENT) {

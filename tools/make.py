@@ -192,15 +192,6 @@ def metadata():
         model.build()
         quads = model.quads(M=rot_matrix(0, 0, 30), T=np.zeros(3)) if source == 'weapons' else model.quads()
         render(quads, (160, 160), yaw=26, pitch=12, margin=.03, ss=3).save(res(source) / (MODS[source][0] + '_logo.png'))
-    write(res('creatures') / 'data' / 'mythoria_creatures' / 'forge' / 'biome_modifier' / 'golden_griffin.json', {
-        'type': 'forge:add_spawns',
-        'biomes': ['minecraft:plains', 'minecraft:sunflower_plains', 'minecraft:meadow', 'minecraft:savanna',
-                   'minecraft:savanna_plateau', 'minecraft:windswept_hills', 'minecraft:windswept_savanna'],
-        'spawners': {'type': 'mythoria_creatures:golden_griffin', 'weight': 6, 'minCount': 1, 'maxCount': 2}})
-    write(res('creatures') / 'data' / 'mythoria_creatures' / 'forge' / 'biome_modifier' / 'crystal_golem.json', {
-        'type': 'forge:add_spawns',
-        'biomes': '#minecraft:is_overworld',
-        'spawners': {'type': 'mythoria_creatures:crystal_golem', 'weight': 3, 'minCount': 1, 'maxCount': 1}})
 
 
 if __name__ == '__main__':

@@ -49,6 +49,7 @@ shot 01-title 8
 click 640 295; shot 02-create-world 6
 click 640 322                       # Allow commands
 click 482 684
+sleep 8; shot 02b-after-create 0
 waitfor "joined the game" 420 || { shot fail; finish "could not join a world" 1; }
 sleep 40
 shot 03-welcome 1
