@@ -210,12 +210,13 @@ public enum Style {
                 return background(x, y, accent);
             }
             if (edge(lx, ly, w, h) || (lx == 1 || lx == w - 2) && (ly == 1 || ly == h - 2)) {
-                return mix(tint(accent, 0.55F), rgb(0xB9A0DC), 0.55F);
+                return mix(rgb(accent.colour()), rgb(0x5A4A6A), 0.45F);
             }
-            if (ly == 1) {
-                return rgb(0xFFFFFF);
-            }
-            return mix(rgb(0xFBF6FF), tint(accent, 0.22F), ly / (float) h);
+            // deep enough for the white item counts to stay readable
+            int light = tint(accent, 0.55F);
+            int deep = mix(rgb(accent.colour()), rgb(0x5A4A6A), 0.25F);
+            int fill = mix(light, deep, 0.5F + 0.2F * ly / (float) h);
+            return ly == 1 ? mix(fill, rgb(0xFFFFFF), 0.35F) : fill;
         }
 
         @Override
